@@ -1,0 +1,22 @@
+
+ RUN  v5.0.3 C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 3/repository
+
+ ✓ tests/sickPay.test.ts > invalid days -1 1ms
+ ✓ tests/sickPay.test.ts > invalid days 0.5 0ms
+ ✓ tests/sickPay.test.ts > invalid days 30.5 0ms
+ ✓ tests/sickPay.test.ts > invalid days 31 0ms
+ ✓ tests/sickPay.test.ts > invalid days NaN 0ms
+ ✓ tests/sickPay.test.ts > invalid days Infinity 0ms
+ ✓ tests/sickPay.test.ts > invalid days -Infinity 0ms
+ ✓ tests/sickPay.test.ts > invalid daily average -0.01 0ms
+ ✓ tests/sickPay.test.ts > invalid daily average -100 0ms
+ ✓ tests/sickPay.test.ts > invalid daily average NaN 0ms
+ ✓ tests/sickPay.test.ts > invalid daily average Infinity 0ms
+ ✓ tests/sickPay.test.ts > invalid daily average -Infinity 0ms
+ ✓ tests/sickPay.test.ts > validates salary even for zero days 0ms
+
+ Test Files  1 passed (1)
+      Tests  13 passed (13)
+   Start at  19:44:42
+   Duration  156ms (transform 47%, import 29%, worker 15%, tests 9%)
+
