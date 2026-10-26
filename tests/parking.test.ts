@@ -13,3 +13,12 @@ it.each([
 ])('first hour %s -> %s', (minutes, expected) => {
   expect(calcParkingFee(minutes)).toBe(expected);
 });
+it.each([
+  [61, 50],
+  [119, 50],
+  [120, 50],
+  [121, 70],
+  [180, 70],
+])('extra hours %s -> %s', (minutes, expected) => {
+  expect(calcParkingFee(minutes)).toBe(expected);
+});
