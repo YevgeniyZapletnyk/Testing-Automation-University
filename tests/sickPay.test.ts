@@ -32,3 +32,11 @@ it.each([
 ])('second tier: %s -> %s', (days, expected) => {
   expect(calcSickPay(days, 100)).toBe(expected);
 });
+it.each([
+  [11, 800],
+  [12, 900],
+  [29, 2600],
+  [30, 2700],
+])('third tier: %s -> %s', (days, expected) => {
+  expect(calcSickPay(days, 100)).toBe(expected);
+});
