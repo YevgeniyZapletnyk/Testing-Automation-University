@@ -1,0 +1,25 @@
+
+ RUN  v5.0.3 C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 3/repository
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  19:43:26
+   Duration  174ms (worker 98%, environment 2%)
+
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/parking.test.ts [ tests/parking.test.ts ]
+Error: Cannot find module '../src/parking' imported from C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 3/repository/tests/parking.test.ts
+ ❯ tests/parking.test.ts:2:1
+      1| import { it, expect } from 'vitest';
+      2| import { calcParkingFee } from '../src/parking';
+       | ^
+      3| it.each([-1, -60, 10.5, NaN, Infinity])('invalid duration %s', (minute…
+      4|   expect(() => calcParkingFee(minutes)).toThrow('INVALID_DURATION');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'ERR_MODULE_NOT_FOUND' }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
