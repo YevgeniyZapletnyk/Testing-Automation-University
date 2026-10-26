@@ -15,3 +15,13 @@ it.each([-0.01, -100, NaN, Infinity, -Infinity])(
 it('validates salary even for zero days', () => {
   expect(() => calcSickPay(0, -1)).toThrow('INVALID_DAILY_AVERAGE');
 });
+it.each([
+  [0, 100, 0],
+  [1, 100, 60],
+  [4, 100, 240],
+  [5, 100, 300],
+  [5, 0, 0],
+  [1, 1000, 600],
+])('first five: %s days x %s -> %s', (days, average, expected) => {
+  expect(calcSickPay(days, average)).toBe(expected);
+});
