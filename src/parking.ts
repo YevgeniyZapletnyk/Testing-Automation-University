@@ -1,12 +1,15 @@
-const FREE_MINUTES = 15,
-  FIRST_HOUR_FEE = 30,
-  EXTRA_HOUR_FEE = 20;
-export function calcParkingFee(minutes: number): number {
+export interface ParkingOptions {
+  night?: boolean;
+  weekend?: boolean;
+}
+export function calcParkingFee(
+  minutes: number,
+  options: ParkingOptions = {},
+): number {
   if (!Number.isInteger(minutes) || minutes < 0)
     throw new Error('INVALID_DURATION');
-  if (minutes <= FREE_MINUTES) return 0;
-  return Math.min(
-    FIRST_HOUR_FEE + Math.ceil(Math.max(0, minutes - 60) / 60) * EXTRA_HOUR_FEE,
-    200,
-  );
+  if (minutes <= 15) return 0;
+  let fee = Math.min(30 + Math.ceil(Math.max(0, minutes - 60) / 60) * 20, 200);
+  if (options.night) fee *= 0.5;
+  return fee;
 }
