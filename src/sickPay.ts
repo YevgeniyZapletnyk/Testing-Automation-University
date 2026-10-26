@@ -4,6 +4,7 @@ function assertValidDays(days: number): void {
 }
 export function calcSickPay(days: number, dailyAverage: number): number {
   assertValidDays(days);
-  void dailyAverage;
+  if (!Number.isFinite(dailyAverage) || dailyAverage < 0)
+    throw new Error('INVALID_DAILY_AVERAGE');
   return 0;
 }
