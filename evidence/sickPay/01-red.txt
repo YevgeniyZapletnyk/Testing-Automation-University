@@ -1,0 +1,25 @@
+
+ RUN  v5.0.3 C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 3/repository
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  19:44:38
+   Duration  157ms (worker 98%, environment 2%)
+
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/sickPay.test.ts [ tests/sickPay.test.ts ]
+Error: Cannot find module '../src/sickPay' imported from C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 3/repository/tests/sickPay.test.ts
+ ❯ tests/sickPay.test.ts:2:1
+      1| import { it, expect } from 'vitest';
+      2| import { calcSickPay } from '../src/sickPay';
+       | ^
+      3| it.each([-1, 0.5, 30.5, 31, NaN, Infinity, -Infinity])(
+      4|   'invalid days %s',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'ERR_MODULE_NOT_FOUND' }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
