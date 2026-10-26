@@ -10,7 +10,9 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "demo": "node tools/cli.ts",
+    "test:lab3": "vitest run tests/parking.test.ts tests/sickPay.test.ts"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

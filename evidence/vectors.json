@@ -1,0 +1,492 @@
+[
+  {
+    "group": "Паркування: валідація",
+    "input": "-1 хв",
+    "expected": "INVALID_DURATION",
+    "actual": "INVALID_DURATION",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: валідація",
+    "input": "-60 хв",
+    "expected": "INVALID_DURATION",
+    "actual": "INVALID_DURATION",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: валідація",
+    "input": "10.5 хв",
+    "expected": "INVALID_DURATION",
+    "actual": "INVALID_DURATION",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: валідація",
+    "input": "NaN хв",
+    "expected": "INVALID_DURATION",
+    "actual": "INVALID_DURATION",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: валідація",
+    "input": "Infinity хв",
+    "expected": "INVALID_DURATION",
+    "actual": "INVALID_DURATION",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: безкоштовно",
+    "input": "0 хв",
+    "expected": "0",
+    "actual": "0",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: безкоштовно",
+    "input": "1 хв",
+    "expected": "0",
+    "actual": "0",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: безкоштовно",
+    "input": "14 хв",
+    "expected": "0",
+    "actual": "0",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: безкоштовно",
+    "input": "15 хв",
+    "expected": "0",
+    "actual": "0",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: тариф",
+    "input": "16 хв",
+    "expected": "30",
+    "actual": "30",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: тариф",
+    "input": "59 хв",
+    "expected": "30",
+    "actual": "30",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: тариф",
+    "input": "60 хв",
+    "expected": "30",
+    "actual": "30",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: тариф",
+    "input": "61 хв",
+    "expected": "50",
+    "actual": "50",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: тариф",
+    "input": "119 хв",
+    "expected": "50",
+    "actual": "50",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: тариф",
+    "input": "120 хв",
+    "expected": "50",
+    "actual": "50",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: тариф",
+    "input": "121 хв",
+    "expected": "70",
+    "actual": "70",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: тариф",
+    "input": "180 хв",
+    "expected": "70",
+    "actual": "70",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: тариф",
+    "input": "539 хв",
+    "expected": "190",
+    "actual": "190",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: тариф",
+    "input": "540 хв",
+    "expected": "190",
+    "actual": "190",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: тариф",
+    "input": "541 хв",
+    "expected": "200",
+    "actual": "200",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: тариф",
+    "input": "600 хв",
+    "expected": "200",
+    "actual": "200",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: тариф",
+    "input": "1440 хв",
+    "expected": "200",
+    "actual": "200",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: ніч",
+    "input": "0 хв; night",
+    "expected": "0",
+    "actual": "0",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: ніч",
+    "input": "15 хв; night",
+    "expected": "0",
+    "actual": "0",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: ніч",
+    "input": "16 хв; night",
+    "expected": "15",
+    "actual": "15",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: ніч",
+    "input": "60 хв; night",
+    "expected": "15",
+    "actual": "15",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: ніч",
+    "input": "121 хв; night",
+    "expected": "35",
+    "actual": "35",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: ніч",
+    "input": "600 хв; night",
+    "expected": "100",
+    "actual": "100",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: вихідний",
+    "input": "15 хв; night=false",
+    "expected": "0",
+    "actual": "0",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: вихідний",
+    "input": "16 хв; night=false",
+    "expected": "24",
+    "actual": "24",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: вихідний",
+    "input": "600 хв; night=false",
+    "expected": "160",
+    "actual": "160",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: вихідний",
+    "input": "600 хв; night=true",
+    "expected": "80",
+    "actual": "80",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: вихідний",
+    "input": "45 хв; night=true",
+    "expected": "12",
+    "actual": "12",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: вихідний",
+    "input": "121 хв; night=true",
+    "expected": "28",
+    "actual": "28",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Паркування: округлення",
+    "input": "45 / 121 хв; обидва прапорці",
+    "expected": "12 / 28",
+    "actual": "12 / 28",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: дні",
+    "input": "-1 дн.; 100 грн/день",
+    "expected": "INVALID_DAYS",
+    "actual": "INVALID_DAYS",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: дні",
+    "input": "0.5 дн.; 100 грн/день",
+    "expected": "INVALID_DAYS",
+    "actual": "INVALID_DAYS",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: дні",
+    "input": "30.5 дн.; 100 грн/день",
+    "expected": "INVALID_DAYS",
+    "actual": "INVALID_DAYS",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: дні",
+    "input": "31 дн.; 100 грн/день",
+    "expected": "INVALID_DAYS",
+    "actual": "INVALID_DAYS",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: дні",
+    "input": "NaN дн.; 100 грн/день",
+    "expected": "INVALID_DAYS",
+    "actual": "INVALID_DAYS",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: дні",
+    "input": "Infinity дн.; 100 грн/день",
+    "expected": "INVALID_DAYS",
+    "actual": "INVALID_DAYS",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: дні",
+    "input": "-Infinity дн.; 100 грн/день",
+    "expected": "INVALID_DAYS",
+    "actual": "INVALID_DAYS",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: заробіток",
+    "input": "1 дн.; -0.01 грн/день",
+    "expected": "INVALID_DAILY_AVERAGE",
+    "actual": "INVALID_DAILY_AVERAGE",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: заробіток",
+    "input": "1 дн.; -100 грн/день",
+    "expected": "INVALID_DAILY_AVERAGE",
+    "actual": "INVALID_DAILY_AVERAGE",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: заробіток",
+    "input": "1 дн.; NaN грн/день",
+    "expected": "INVALID_DAILY_AVERAGE",
+    "actual": "INVALID_DAILY_AVERAGE",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: заробіток",
+    "input": "1 дн.; Infinity грн/день",
+    "expected": "INVALID_DAILY_AVERAGE",
+    "actual": "INVALID_DAILY_AVERAGE",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: заробіток",
+    "input": "1 дн.; -Infinity грн/день",
+    "expected": "INVALID_DAILY_AVERAGE",
+    "actual": "INVALID_DAILY_AVERAGE",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: порядок перевірок",
+    "input": "0 дн.; -1 грн/день",
+    "expected": "INVALID_DAILY_AVERAGE",
+    "actual": "INVALID_DAILY_AVERAGE",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: 60 %",
+    "input": "0 дн.; 100 грн/день",
+    "expected": "0",
+    "actual": "0",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: 60 %",
+    "input": "1 дн.; 100 грн/день",
+    "expected": "60",
+    "actual": "60",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: 60 %",
+    "input": "4 дн.; 100 грн/день",
+    "expected": "240",
+    "actual": "240",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: 60 %",
+    "input": "5 дн.; 100 грн/день",
+    "expected": "300",
+    "actual": "300",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: 60 %",
+    "input": "5 дн.; 0 грн/день",
+    "expected": "0",
+    "actual": "0",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: 60 %",
+    "input": "1 дн.; 1000 грн/день",
+    "expected": "600",
+    "actual": "600",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: періоди",
+    "input": "6 дн.; 100 грн/день",
+    "expected": "380",
+    "actual": "380",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: періоди",
+    "input": "9 дн.; 100 грн/день",
+    "expected": "620",
+    "actual": "620",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: періоди",
+    "input": "10 дн.; 100 грн/день",
+    "expected": "700",
+    "actual": "700",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: періоди",
+    "input": "11 дн.; 100 грн/день",
+    "expected": "800",
+    "actual": "800",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: періоди",
+    "input": "12 дн.; 100 грн/день",
+    "expected": "900",
+    "actual": "900",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: періоди",
+    "input": "29 дн.; 100 грн/день",
+    "expected": "2600",
+    "actual": "2600",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: періоди",
+    "input": "30 дн.; 100 грн/день",
+    "expected": "2700",
+    "actual": "2700",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: округлення",
+    "input": "1 дн.; 100.01 грн/день",
+    "expected": "60.01",
+    "actual": "60.01",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: округлення",
+    "input": "5 дн.; 100.01 грн/день",
+    "expected": "300.03",
+    "actual": "300.03",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: округлення",
+    "input": "6 дн.; 100.01 грн/день",
+    "expected": "380.04",
+    "actual": "380.04",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: округлення",
+    "input": "10 дн.; 100.01 грн/день",
+    "expected": "700.07",
+    "actual": "700.07",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: округлення",
+    "input": "11 дн.; 100.01 грн/день",
+    "expected": "800.08",
+    "actual": "800.08",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: округлення",
+    "input": "30 дн.; 100.01 грн/день",
+    "expected": "2700.27",
+    "actual": "2700.27",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: округлення",
+    "input": "1 дн.; 0.01 грн/день",
+    "expected": "0.01",
+    "actual": "0.01",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: округлення",
+    "input": "2 дн.; 0.01 грн/день",
+    "expected": "0.01",
+    "actual": "0.01",
+    "status": "Пройдено"
+  },
+  {
+    "group": "Лікарняні: округлення",
+    "input": "11 дн.; 333.33 грн/день",
+    "expected": "2666.64",
+    "actual": "2666.64",
+    "status": "Пройдено"
+  }
+]

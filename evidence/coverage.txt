@@ -1,0 +1,35 @@
+
+ RUN  v5.0.3 C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 3/repository
+      Coverage enabled with v8
+
+ ✓ tests/temperature.test.ts (4 tests) 5ms
+ ✓ tests/parking.test.ts (35 tests) 7ms
+ ✓ tests/vat.test.ts (25 tests) 7ms
+ ✓ tests/bmi.test.ts (13 tests) 8ms
+ ✓ tests/sickPay.test.ts (35 tests) 8ms
+ ✓ tests/order.test.ts (32 tests) 10ms
+
+ Test Files  6 passed (6)
+      Tests  144 passed (144)
+   Start at  19:47:09
+   Duration  272ms (transform 37%, worker 31%, import 24%, tests 8%)
+
+JSON report written to C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 3/repository/evidence/final-tests.json
+ % Coverage report from v8
+----------------|---------|----------|---------|---------|-------------------
+File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------------|---------|----------|---------|---------|-------------------
+All files       |     100 |      100 |     100 |     100 |                   
+ bmi.ts         |     100 |      100 |     100 |     100 |                   
+ order.ts       |     100 |      100 |     100 |     100 |                   
+ parking.ts     |     100 |      100 |     100 |     100 |                   
+ sickPay.ts     |     100 |      100 |     100 |     100 |                   
+ temperature.ts |     100 |      100 |     100 |     100 |                   
+----------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 100% ( 77/77 )
+Branches     : 100% ( 55/55 )
+Functions    : 100% ( 18/18 )
+Lines        : 100% ( 70/70 )
+================================================================================

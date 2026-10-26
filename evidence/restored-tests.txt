@@ -1,0 +1,9 @@
+
+ RUN  v5.0.3 C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 3/repository
+
+
+ Test Files  6 passed (6)
+      Tests  144 passed (144)
+   Start at  19:47:15
+   Duration  225ms (transform 53%, import 24%, worker 14%, tests 9%)
+

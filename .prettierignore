@@ -3,3 +3,6 @@ coverage/
 dist/
 package-lock.json
 .npm-cache/
+
+evidence/
+reports/

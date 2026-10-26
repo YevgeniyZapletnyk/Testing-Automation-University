@@ -1,0 +1,35 @@
+193d209 red: parking 1 - некоректна тривалість
+dbc8240 green: parking 1 - некоректна тривалість
+490a8ec red: parking 2 - безкоштовні 15 хвилин
+b9e5e27 green: parking 2 - безкоштовні 15 хвилин
+eca18be red: parking 3 - перша година
+69c070b green: parking 3 - перша година
+f322319 red: parking 4 - розпочаті години
+b8fb1f8 green: parking 4 - розпочаті години
+b65d946 refactor: parking 4 - іменовані тарифні константи
+8e1de78 red: parking 5 - добове обмеження
+2af2834 green: parking 5 - добове обмеження
+c198cf6 red: parking 6 - нічний тариф
+6a37a6f green: parking 6 - нічний тариф
+68c37bb red: parking 7 - вихідний день
+925ce8d green: parking 7 - вихідний день
+9c063b9 test: parking 8 - приклади округлення вже проходять
+45fcce2 refactor: parking 8 - валідація, базова сума та знижки
+049d18b red: sickPay 1 - діапазон цілих днів 0-30
+94fdab9 green: sickPay 1 - діапазон цілих днів 0-30
+db27a16 refactor: sickPay 1 - окрема перевірка днів
+1466fc7 red: sickPay 2 - коректний середньоденний заробіток
+f9c641b green: sickPay 2 - коректний середньоденний заробіток
+0bfbcbb refactor: sickPay 2 - окрема перевірка заробітку
+da7297c red: sickPay 3 - 60 відсотків за дні 1-5
+a44bcc1 green: sickPay 3 - 60 відсотків за дні 1-5
+8c240e1 refactor: sickPay 3 - константи першого періоду
+a7e449e red: sickPay 4 - 80 відсотків за дні 6-10
+54b479d green: sickPay 4 - 80 відсотків за дні 6-10
+a587dd9 refactor: sickPay 4 - окремі лічильники оплачуваних днів
+e7cbf1d red: sickPay 5 - повна оплата днів 11-30
+795215a green: sickPay 5 - повна оплата днів 11-30
+64f67a4 refactor: sickPay 5 - функція зважених днів і межі періодів
+0c3a225 red: sickPay 6 - округлення загальної суми до копійок
+134093d green: sickPay 6 - округлення загальної суми до копійок
+49cfa7c refactor: sickPay 6 - іменована функція округлення

@@ -1,0 +1,38 @@
+[
+  {
+    "module": "sickPay",
+    "change": "days > MAX_DAYS -> days >= MAX_DAYS",
+    "label": "30 днів помилково відхиляються",
+    "failed": 2
+  },
+  {
+    "module": "sickPay",
+    "change": "FIRST_RATE = 0.6 -> FIRST_RATE = 0.5",
+    "label": "Змінено ставку першого періоду",
+    "failed": 18
+  },
+  {
+    "module": "sickPay",
+    "change": "SECOND_RATE = 0.8 -> SECOND_RATE = 1",
+    "label": "Змінено ставку другого періоду",
+    "failed": 12
+  },
+  {
+    "module": "sickPay",
+    "change": "Math.round(amount * 100) / 100 -> amount",
+    "label": "Прибрано округлення суми",
+    "failed": 5
+  },
+  {
+    "module": "parking",
+    "change": "minutes <= FREE_MINUTES -> minutes < FREE_MINUTES",
+    "label": "15 хвилин помилково платні",
+    "failed": 3
+  },
+  {
+    "module": "parking",
+    "change": "DAILY_CAP = 200 -> DAILY_CAP = 210",
+    "label": "Завищено добову межу",
+    "failed": 6
+  }
+]

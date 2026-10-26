@@ -1,0 +1,16 @@
+{
+  "pages": 17,
+  "tables": 11,
+  "figures": 2,
+  "listings": 6,
+  "listings_unsplit": true,
+  "title_single_page": true,
+  "forbidden_phrases": 0,
+  "reviewed_in": "Microsoft Word 16.0",
+  "margins_cm": {
+    "left": 2.5,
+    "right": 1.5,
+    "top": 1.5,
+    "bottom": 1.5
+  }
+}

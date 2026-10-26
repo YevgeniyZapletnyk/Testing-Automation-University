@@ -1,0 +1,27 @@
+> node tools/cli.ts sick 11 333.33
+Sick pay: 2666.64 UAH
+Exit code: 0
+
+> node tools/cli.ts sick 30 100
+Sick pay: 2700.00 UAH
+Exit code: 0
+
+> node tools/cli.ts sick 31 100
+INVALID_DAYS
+Exit code: 1
+
+> node tools/cli.ts sick 6 100.01
+Sick pay: 380.04 UAH
+Exit code: 0
+
+> node tools/cli.ts parking 600 --night --weekend
+Parking fee: 80.00 UAH
+Exit code: 0
+
+> node tools/cli.ts parking -1
+INVALID_DURATION
+Exit code: 1
+
+> node tools/cli.ts sick 2 -5
+INVALID_DAILY_AVERAGE
+Exit code: 1

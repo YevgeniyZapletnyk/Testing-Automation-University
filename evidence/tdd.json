@@ -1,0 +1,308 @@
+[
+  {
+    "module": "parking",
+    "cycle": 1,
+    "phase": "red",
+    "label": "некоректна тривалість",
+    "commit": "193d209",
+    "log": "evidence/parking/01-red.txt",
+    "seconds": 0.535
+  },
+  {
+    "module": "parking",
+    "cycle": 1,
+    "phase": "green",
+    "label": "некоректна тривалість",
+    "commit": "dbc8240",
+    "log": "evidence/parking/01-green.txt",
+    "seconds": 0.542
+  },
+  {
+    "module": "parking",
+    "cycle": 2,
+    "phase": "red",
+    "label": "безкоштовні 15 хвилин",
+    "commit": "490a8ec",
+    "log": "evidence/parking/02-red.txt",
+    "seconds": 0.521
+  },
+  {
+    "module": "parking",
+    "cycle": 2,
+    "phase": "green",
+    "label": "безкоштовні 15 хвилин",
+    "commit": "b9e5e27",
+    "log": "evidence/parking/02-green.txt",
+    "seconds": 0.523
+  },
+  {
+    "module": "parking",
+    "cycle": 3,
+    "phase": "red",
+    "label": "перша година",
+    "commit": "eca18be",
+    "log": "evidence/parking/03-red.txt",
+    "seconds": 0.499
+  },
+  {
+    "module": "parking",
+    "cycle": 3,
+    "phase": "green",
+    "label": "перша година",
+    "commit": "69c070b",
+    "log": "evidence/parking/03-green.txt",
+    "seconds": 0.529
+  },
+  {
+    "module": "parking",
+    "cycle": 4,
+    "phase": "red",
+    "label": "розпочаті години",
+    "commit": "f322319",
+    "log": "evidence/parking/04-red.txt",
+    "seconds": 0.502
+  },
+  {
+    "module": "parking",
+    "cycle": 4,
+    "phase": "green",
+    "label": "розпочаті години",
+    "commit": "b8fb1f8",
+    "log": "evidence/parking/04-green.txt",
+    "seconds": 0.513
+  },
+  {
+    "module": "parking",
+    "cycle": 4,
+    "phase": "refactor",
+    "label": "іменовані тарифні константи",
+    "commit": "b65d946",
+    "log": "evidence/parking/04-refactor.txt",
+    "seconds": 0.515
+  },
+  {
+    "module": "parking",
+    "cycle": 5,
+    "phase": "red",
+    "label": "добове обмеження",
+    "commit": "8e1de78",
+    "log": "evidence/parking/05-red.txt",
+    "seconds": 0.534
+  },
+  {
+    "module": "parking",
+    "cycle": 5,
+    "phase": "green",
+    "label": "добове обмеження",
+    "commit": "2af2834",
+    "log": "evidence/parking/05-green.txt",
+    "seconds": 0.51
+  },
+  {
+    "module": "parking",
+    "cycle": 6,
+    "phase": "red",
+    "label": "нічний тариф",
+    "commit": "c198cf6",
+    "log": "evidence/parking/06-red.txt",
+    "seconds": 0.502
+  },
+  {
+    "module": "parking",
+    "cycle": 6,
+    "phase": "green",
+    "label": "нічний тариф",
+    "commit": "6a37a6f",
+    "log": "evidence/parking/06-green.txt",
+    "seconds": 0.511
+  },
+  {
+    "module": "parking",
+    "cycle": 7,
+    "phase": "red",
+    "label": "вихідний день",
+    "commit": "68c37bb",
+    "log": "evidence/parking/07-red.txt",
+    "seconds": 0.503
+  },
+  {
+    "module": "parking",
+    "cycle": 7,
+    "phase": "green",
+    "label": "вихідний день",
+    "commit": "925ce8d",
+    "log": "evidence/parking/07-green.txt",
+    "seconds": 0.526
+  },
+  {
+    "module": "parking",
+    "cycle": 8,
+    "phase": "refactor",
+    "label": "валідація, базова сума та знижки",
+    "commit": "45fcce2",
+    "log": "evidence/parking/08-refactor.txt",
+    "seconds": 0.491
+  },
+  {
+    "module": "sickPay",
+    "cycle": 1,
+    "phase": "red",
+    "label": "діапазон цілих днів 0-30",
+    "commit": "049d18b",
+    "log": "evidence/sickPay/01-red.txt",
+    "seconds": 0.518
+  },
+  {
+    "module": "sickPay",
+    "cycle": 1,
+    "phase": "green",
+    "label": "діапазон цілих днів 0-30",
+    "commit": "94fdab9",
+    "log": "evidence/sickPay/01-green.txt",
+    "seconds": 0.504
+  },
+  {
+    "module": "sickPay",
+    "cycle": 1,
+    "phase": "refactor",
+    "label": "окрема перевірка днів",
+    "commit": "db27a16",
+    "log": "evidence/sickPay/01-refactor.txt",
+    "seconds": 0.505
+  },
+  {
+    "module": "sickPay",
+    "cycle": 2,
+    "phase": "red",
+    "label": "коректний середньоденний заробіток",
+    "commit": "1466fc7",
+    "log": "evidence/sickPay/02-red.txt",
+    "seconds": 0.516
+  },
+  {
+    "module": "sickPay",
+    "cycle": 2,
+    "phase": "green",
+    "label": "коректний середньоденний заробіток",
+    "commit": "f9c641b",
+    "log": "evidence/sickPay/02-green.txt",
+    "seconds": 0.503
+  },
+  {
+    "module": "sickPay",
+    "cycle": 2,
+    "phase": "refactor",
+    "label": "окрема перевірка заробітку",
+    "commit": "0bfbcbb",
+    "log": "evidence/sickPay/02-refactor.txt",
+    "seconds": 0.513
+  },
+  {
+    "module": "sickPay",
+    "cycle": 3,
+    "phase": "red",
+    "label": "60 відсотків за дні 1-5",
+    "commit": "da7297c",
+    "log": "evidence/sickPay/03-red.txt",
+    "seconds": 0.5
+  },
+  {
+    "module": "sickPay",
+    "cycle": 3,
+    "phase": "green",
+    "label": "60 відсотків за дні 1-5",
+    "commit": "a44bcc1",
+    "log": "evidence/sickPay/03-green.txt",
+    "seconds": 0.5
+  },
+  {
+    "module": "sickPay",
+    "cycle": 3,
+    "phase": "refactor",
+    "label": "константи першого періоду",
+    "commit": "8c240e1",
+    "log": "evidence/sickPay/03-refactor.txt",
+    "seconds": 0.507
+  },
+  {
+    "module": "sickPay",
+    "cycle": 4,
+    "phase": "red",
+    "label": "80 відсотків за дні 6-10",
+    "commit": "a7e449e",
+    "log": "evidence/sickPay/04-red.txt",
+    "seconds": 0.518
+  },
+  {
+    "module": "sickPay",
+    "cycle": 4,
+    "phase": "green",
+    "label": "80 відсотків за дні 6-10",
+    "commit": "54b479d",
+    "log": "evidence/sickPay/04-green.txt",
+    "seconds": 0.524
+  },
+  {
+    "module": "sickPay",
+    "cycle": 4,
+    "phase": "refactor",
+    "label": "окремі лічильники оплачуваних днів",
+    "commit": "a587dd9",
+    "log": "evidence/sickPay/04-refactor.txt",
+    "seconds": 0.502
+  },
+  {
+    "module": "sickPay",
+    "cycle": 5,
+    "phase": "red",
+    "label": "повна оплата днів 11-30",
+    "commit": "e7cbf1d",
+    "log": "evidence/sickPay/05-red.txt",
+    "seconds": 0.501
+  },
+  {
+    "module": "sickPay",
+    "cycle": 5,
+    "phase": "green",
+    "label": "повна оплата днів 11-30",
+    "commit": "795215a",
+    "log": "evidence/sickPay/05-green.txt",
+    "seconds": 0.501
+  },
+  {
+    "module": "sickPay",
+    "cycle": 5,
+    "phase": "refactor",
+    "label": "функція зважених днів і межі періодів",
+    "commit": "64f67a4",
+    "log": "evidence/sickPay/05-refactor.txt",
+    "seconds": 0.531
+  },
+  {
+    "module": "sickPay",
+    "cycle": 6,
+    "phase": "red",
+    "label": "округлення загальної суми до копійок",
+    "commit": "0c3a225",
+    "log": "evidence/sickPay/06-red.txt",
+    "seconds": 0.526
+  },
+  {
+    "module": "sickPay",
+    "cycle": 6,
+    "phase": "green",
+    "label": "округлення загальної суми до копійок",
+    "commit": "134093d",
+    "log": "evidence/sickPay/06-green.txt",
+    "seconds": 0.514
+  },
+  {
+    "module": "sickPay",
+    "cycle": 6,
+    "phase": "refactor",
+    "label": "іменована функція округлення",
+    "commit": "49cfa7c",
+    "log": "evidence/sickPay/06-refactor.txt",
+    "seconds": 0.496
+  }
+]
