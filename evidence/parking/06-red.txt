@@ -1,0 +1,102 @@
+
+ RUN  v5.0.3 C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 3/repository
+
+ ✓ tests/parking.test.ts > invalid duration -1 2ms
+ ✓ tests/parking.test.ts > invalid duration -60 0ms
+ ✓ tests/parking.test.ts > invalid duration 10.5 0ms
+ ✓ tests/parking.test.ts > invalid duration NaN 0ms
+ ✓ tests/parking.test.ts > invalid duration Infinity 0ms
+ ✓ tests/parking.test.ts > free 0 0ms
+ ✓ tests/parking.test.ts > free 1 0ms
+ ✓ tests/parking.test.ts > free 14 0ms
+ ✓ tests/parking.test.ts > free 15 0ms
+ ✓ tests/parking.test.ts > first hour 16 -> 30 0ms
+ ✓ tests/parking.test.ts > first hour 59 -> 30 0ms
+ ✓ tests/parking.test.ts > first hour 60 -> 30 0ms
+ ✓ tests/parking.test.ts > extra hours 61 -> 50 0ms
+ ✓ tests/parking.test.ts > extra hours 119 -> 50 0ms
+ ✓ tests/parking.test.ts > extra hours 120 -> 50 0ms
+ ✓ tests/parking.test.ts > extra hours 121 -> 70 0ms
+ ✓ tests/parking.test.ts > extra hours 180 -> 70 0ms
+ ✓ tests/parking.test.ts > daily cap 539 -> 190 0ms
+ ✓ tests/parking.test.ts > daily cap 540 -> 190 0ms
+ ✓ tests/parking.test.ts > daily cap 541 -> 200 0ms
+ ✓ tests/parking.test.ts > daily cap 600 -> 200 0ms
+ ✓ tests/parking.test.ts > daily cap 1440 -> 200 0ms
+ ✓ tests/parking.test.ts > night 0 -> 0 0ms
+ ✓ tests/parking.test.ts > night 15 -> 0 0ms
+ × tests/parking.test.ts > night 16 -> 15 4ms
+   → expected 30 to be 15 // Object.is equality
+ × tests/parking.test.ts > night 60 -> 15 1ms
+   → expected 30 to be 15 // Object.is equality
+ × tests/parking.test.ts > night 121 -> 35 0ms
+   → expected 70 to be 35 // Object.is equality
+ × tests/parking.test.ts > night 600 -> 100 0ms
+   → expected 200 to be 100 // Object.is equality
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 24 passed (28)
+   Start at  19:43:35
+   Duration  164ms (transform 44%, import 24%, tests 19%, worker 13%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/parking.test.ts > night 16 -> 15
+ FAIL  tests/parking.test.ts > night 60 -> 15
+AssertionError: expected 30 to be 15 // Object.is equality
+
+- Expected
++ Received
+
+- 15
++ 30
+
+ ❯ tests/parking.test.ts:42:52
+     40|   [600, 100],
+     41| ])('night %s -> %s', (minutes, expected) => {
+     42|   expect(calcParkingFee(minutes, { night: true })).toBe(expected);
+       |                                                    ^
+     43| });
+     44|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  tests/parking.test.ts > night 121 -> 35
+AssertionError: expected 70 to be 35 // Object.is equality
+
+- Expected
++ Received
+
+- 35
++ 70
+
+ ❯ tests/parking.test.ts:42:52
+     40|   [600, 100],
+     41| ])('night %s -> %s', (minutes, expected) => {
+     42|   expect(calcParkingFee(minutes, { night: true })).toBe(expected);
+       |                                                    ^
+     43| });
+     44|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  tests/parking.test.ts > night 600 -> 100
+AssertionError: expected 200 to be 100 // Object.is equality
+
+- Expected
++ Received
+
+- 100
++ 200
+
+ ❯ tests/parking.test.ts:42:52
+     40|   [600, 100],
+     41| ])('night %s -> %s', (minutes, expected) => {
+     42|   expect(calcParkingFee(minutes, { night: true })).toBe(expected);
+       |                                                    ^
+     43| });
+     44|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+

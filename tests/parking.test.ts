@@ -31,3 +31,13 @@ it.each([
 ])('daily cap %s -> %s', (minutes, expected) => {
   expect(calcParkingFee(minutes)).toBe(expected);
 });
+it.each([
+  [0, 0],
+  [15, 0],
+  [16, 15],
+  [60, 15],
+  [121, 35],
+  [600, 100],
+])('night %s -> %s', (minutes, expected) => {
+  expect(calcParkingFee(minutes, { night: true })).toBe(expected);
+});
