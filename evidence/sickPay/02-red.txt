@@ -1,0 +1,73 @@
+
+ RUN  v5.0.3 C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 3/repository
+
+ ✓ tests/sickPay.test.ts > invalid days -1 1ms
+ ✓ tests/sickPay.test.ts > invalid days 0.5 0ms
+ ✓ tests/sickPay.test.ts > invalid days 30.5 0ms
+ ✓ tests/sickPay.test.ts > invalid days 31 0ms
+ ✓ tests/sickPay.test.ts > invalid days NaN 0ms
+ ✓ tests/sickPay.test.ts > invalid days Infinity 0ms
+ ✓ tests/sickPay.test.ts > invalid days -Infinity 0ms
+ × tests/sickPay.test.ts > invalid daily average -0.01 4ms
+   → expected [Function] to throw an error
+ × tests/sickPay.test.ts > invalid daily average -100 1ms
+   → expected [Function] to throw an error
+ × tests/sickPay.test.ts > invalid daily average NaN 0ms
+   → expected [Function] to throw an error
+ × tests/sickPay.test.ts > invalid daily average Infinity 0ms
+   → expected [Function] to throw an error
+ × tests/sickPay.test.ts > invalid daily average -Infinity 0ms
+   → expected [Function] to throw an error
+ × tests/sickPay.test.ts > validates salary even for zero days 0ms
+   → expected [Function] to throw an error
+
+ Test Files  1 failed (1)
+      Tests  6 failed | 7 passed (13)
+   Start at  19:44:41
+   Duration  169ms (transform 43%, import 24%, tests 18%, worker 14%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/sickPay.test.ts > invalid daily average -0.01
+ FAIL  tests/sickPay.test.ts > invalid daily average -100
+ FAIL  tests/sickPay.test.ts > invalid daily average NaN
+ FAIL  tests/sickPay.test.ts > invalid daily average Infinity
+ FAIL  tests/sickPay.test.ts > invalid daily average -Infinity
+AssertionError: expected [Function] to throw an error
+
+- Expected:
+null
+
++ Received:
+undefined
+
+ ❯ tests/sickPay.test.ts:12:43
+     10|   'invalid daily average %s',
+     11|   (average) => {
+     12|     expect(() => calcSickPay(1, average)).toThrow('INVALID_DAILY_AVERA…
+       |                                           ^
+     13|   },
+     14| );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  tests/sickPay.test.ts > validates salary even for zero days
+AssertionError: expected [Function] to throw an error
+
+- Expected:
+null
+
++ Received:
+undefined
+
+ ❯ tests/sickPay.test.ts:16:36
+     14| );
+     15| it('validates salary even for zero days', () => {
+     16|   expect(() => calcSickPay(0, -1)).toThrow('INVALID_DAILY_AVERAGE');
+       |                                    ^
+     17| });
+     18|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
