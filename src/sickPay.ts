@@ -20,8 +20,11 @@ function calcWeightedDays(days: number): number {
   const remainingDays = Math.max(0, days - SECOND_PERIOD_END);
   return firstDays * FIRST_RATE + secondDays * SECOND_RATE + remainingDays;
 }
+function roundMoney(amount: number): number {
+  return Math.round(amount * 100) / 100;
+}
 export function calcSickPay(days: number, dailyAverage: number): number {
   assertValidDays(days);
   assertValidDailyAverage(dailyAverage);
-  return Math.round(dailyAverage * calcWeightedDays(days) * 100) / 100;
+  return roundMoney(dailyAverage * calcWeightedDays(days));
 }
