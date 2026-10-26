@@ -25,3 +25,10 @@ it.each([
 ])('first five: %s days x %s -> %s', (days, average, expected) => {
   expect(calcSickPay(days, average)).toBe(expected);
 });
+it.each([
+  [6, 380],
+  [9, 620],
+  [10, 700],
+])('second tier: %s -> %s', (days, expected) => {
+  expect(calcSickPay(days, 100)).toBe(expected);
+});

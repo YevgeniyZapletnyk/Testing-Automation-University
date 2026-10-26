@@ -1,0 +1,94 @@
+
+ RUN  v5.0.3 C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 3/repository
+
+ ✓ tests/sickPay.test.ts > invalid days -1 2ms
+ ✓ tests/sickPay.test.ts > invalid days 0.5 0ms
+ ✓ tests/sickPay.test.ts > invalid days 30.5 0ms
+ ✓ tests/sickPay.test.ts > invalid days 31 0ms
+ ✓ tests/sickPay.test.ts > invalid days NaN 0ms
+ ✓ tests/sickPay.test.ts > invalid days Infinity 0ms
+ ✓ tests/sickPay.test.ts > invalid days -Infinity 0ms
+ ✓ tests/sickPay.test.ts > invalid daily average -0.01 0ms
+ ✓ tests/sickPay.test.ts > invalid daily average -100 0ms
+ ✓ tests/sickPay.test.ts > invalid daily average NaN 0ms
+ ✓ tests/sickPay.test.ts > invalid daily average Infinity 0ms
+ ✓ tests/sickPay.test.ts > invalid daily average -Infinity 0ms
+ ✓ tests/sickPay.test.ts > validates salary even for zero days 0ms
+ ✓ tests/sickPay.test.ts > first five: 0 days x 100 -> 0 0ms
+ ✓ tests/sickPay.test.ts > first five: 1 days x 100 -> 60 0ms
+ ✓ tests/sickPay.test.ts > first five: 4 days x 100 -> 240 0ms
+ ✓ tests/sickPay.test.ts > first five: 5 days x 100 -> 300 0ms
+ ✓ tests/sickPay.test.ts > first five: 5 days x 0 -> 0 0ms
+ ✓ tests/sickPay.test.ts > first five: 1 days x 1000 -> 600 0ms
+ × tests/sickPay.test.ts > second tier: 6 -> 380 5ms
+   → expected 360 to be 380 // Object.is equality
+ × tests/sickPay.test.ts > second tier: 9 -> 620 1ms
+   → expected 540 to be 620 // Object.is equality
+ × tests/sickPay.test.ts > second tier: 10 -> 700 0ms
+   → expected 600 to be 700 // Object.is equality
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 19 passed (22)
+   Start at  19:44:45
+   Duration  177ms (transform 45%, import 24%, tests 19%, worker 12%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/sickPay.test.ts > second tier: 6 -> 380
+AssertionError: expected 360 to be 380 // Object.is equality
+
+- Expected
++ Received
+
+- 380
++ 360
+
+ ❯ tests/sickPay.test.ts:33:34
+     31|   [10, 700],
+     32| ])('second tier: %s -> %s', (days, expected) => {
+     33|   expect(calcSickPay(days, 100)).toBe(expected);
+       |                                  ^
+     34| });
+     35|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/sickPay.test.ts > second tier: 9 -> 620
+AssertionError: expected 540 to be 620 // Object.is equality
+
+- Expected
++ Received
+
+- 620
++ 540
+
+ ❯ tests/sickPay.test.ts:33:34
+     31|   [10, 700],
+     32| ])('second tier: %s -> %s', (days, expected) => {
+     33|   expect(calcSickPay(days, 100)).toBe(expected);
+       |                                  ^
+     34| });
+     35|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/sickPay.test.ts > second tier: 10 -> 700
+AssertionError: expected 600 to be 700 // Object.is equality
+
+- Expected
++ Received
+
+- 700
++ 600
+
+ ❯ tests/sickPay.test.ts:33:34
+     31|   [10, 700],
+     32| ])('second tier: %s -> %s', (days, expected) => {
+     33|   expect(calcSickPay(days, 100)).toBe(expected);
+       |                                  ^
+     34| });
+     35|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
