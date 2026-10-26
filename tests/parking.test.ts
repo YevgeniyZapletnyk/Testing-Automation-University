@@ -41,3 +41,13 @@ it.each([
 ])('night %s -> %s', (minutes, expected) => {
   expect(calcParkingFee(minutes, { night: true })).toBe(expected);
 });
+it.each([
+  [15, false, 0],
+  [16, false, 24],
+  [600, false, 160],
+  [600, true, 80],
+  [45, true, 12],
+  [121, true, 28],
+] as const)('weekend %s night %s -> %s', (minutes, night, expected) => {
+  expect(calcParkingFee(minutes, { night, weekend: true })).toBe(expected);
+});
