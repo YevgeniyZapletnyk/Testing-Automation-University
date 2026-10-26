@@ -11,5 +11,9 @@ function assertValidDailyAverage(dailyAverage: number): void {
 export function calcSickPay(days: number, dailyAverage: number): number {
   assertValidDays(days);
   assertValidDailyAverage(dailyAverage);
-  return days * dailyAverage * FIRST_RATE;
+  return (
+    dailyAverage *
+    (Math.min(days, FIRST_PERIOD_DAYS) * FIRST_RATE +
+      Math.max(0, days - FIRST_PERIOD_DAYS) * 0.8)
+  );
 }
