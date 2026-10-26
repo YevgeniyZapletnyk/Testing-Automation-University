@@ -9,5 +9,5 @@ function assertValidDailyAverage(dailyAverage: number): void {
 export function calcSickPay(days: number, dailyAverage: number): number {
   assertValidDays(days);
   assertValidDailyAverage(dailyAverage);
-  return 0;
+  return days * dailyAverage * 0.6;
 }
