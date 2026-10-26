@@ -6,3 +6,10 @@ it.each([-1, -60, 10.5, NaN, Infinity])('invalid duration %s', (minutes) => {
 it.each([0, 1, 14, 15])('free %s', (minutes) => {
   expect(calcParkingFee(minutes)).toBe(0);
 });
+it.each([
+  [16, 30],
+  [59, 30],
+  [60, 30],
+])('first hour %s -> %s', (minutes, expected) => {
+  expect(calcParkingFee(minutes)).toBe(expected);
+});

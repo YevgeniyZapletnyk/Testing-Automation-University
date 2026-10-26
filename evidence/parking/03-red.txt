@@ -1,0 +1,48 @@
+
+ RUN  v5.0.3 C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 3/repository
+
+ ✓ tests/parking.test.ts > invalid duration -1 2ms
+ ✓ tests/parking.test.ts > invalid duration -60 0ms
+ ✓ tests/parking.test.ts > invalid duration 10.5 0ms
+ ✓ tests/parking.test.ts > invalid duration NaN 0ms
+ ✓ tests/parking.test.ts > invalid duration Infinity 0ms
+ ✓ tests/parking.test.ts > free 0 0ms
+ ✓ tests/parking.test.ts > free 1 0ms
+ ✓ tests/parking.test.ts > free 14 0ms
+ ✓ tests/parking.test.ts > free 15 0ms
+ × tests/parking.test.ts > first hour 16 -> 30 5ms
+   → expected +0 to be 30 // Object.is equality
+ × tests/parking.test.ts > first hour 59 -> 30 1ms
+   → expected +0 to be 30 // Object.is equality
+ × tests/parking.test.ts > first hour 60 -> 30 1ms
+   → expected +0 to be 30 // Object.is equality
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 9 passed (12)
+   Start at  19:43:29
+   Duration  167ms (transform 42%, import 26%, tests 20%, worker 12%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/parking.test.ts > first hour 16 -> 30
+ FAIL  tests/parking.test.ts > first hour 59 -> 30
+ FAIL  tests/parking.test.ts > first hour 60 -> 30
+AssertionError: expected +0 to be 30 // Object.is equality
+
+- Expected
++ Received
+
+- 30
++ 0
+
+ ❯ tests/parking.test.ts:14:35
+     12|   [60, 30],
+     13| ])('first hour %s -> %s', (minutes, expected) => {
+     14|   expect(calcParkingFee(minutes)).toBe(expected);
+       |                                   ^
+     15| });
+     16|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
