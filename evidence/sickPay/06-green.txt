@@ -1,0 +1,44 @@
+
+ RUN  v5.0.3 C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 3/repository
+
+ ✓ tests/sickPay.test.ts > invalid days -1 2ms
+ ✓ tests/sickPay.test.ts > invalid days 0.5 0ms
+ ✓ tests/sickPay.test.ts > invalid days 30.5 0ms
+ ✓ tests/sickPay.test.ts > invalid days 31 0ms
+ ✓ tests/sickPay.test.ts > invalid days NaN 0ms
+ ✓ tests/sickPay.test.ts > invalid days Infinity 0ms
+ ✓ tests/sickPay.test.ts > invalid days -Infinity 0ms
+ ✓ tests/sickPay.test.ts > invalid daily average -0.01 0ms
+ ✓ tests/sickPay.test.ts > invalid daily average -100 0ms
+ ✓ tests/sickPay.test.ts > invalid daily average NaN 0ms
+ ✓ tests/sickPay.test.ts > invalid daily average Infinity 0ms
+ ✓ tests/sickPay.test.ts > invalid daily average -Infinity 0ms
+ ✓ tests/sickPay.test.ts > validates salary even for zero days 0ms
+ ✓ tests/sickPay.test.ts > first five: 0 days x 100 -> 0 0ms
+ ✓ tests/sickPay.test.ts > first five: 1 days x 100 -> 60 0ms
+ ✓ tests/sickPay.test.ts > first five: 4 days x 100 -> 240 0ms
+ ✓ tests/sickPay.test.ts > first five: 5 days x 100 -> 300 0ms
+ ✓ tests/sickPay.test.ts > first five: 5 days x 0 -> 0 0ms
+ ✓ tests/sickPay.test.ts > first five: 1 days x 1000 -> 600 0ms
+ ✓ tests/sickPay.test.ts > second tier: 6 -> 380 0ms
+ ✓ tests/sickPay.test.ts > second tier: 9 -> 620 0ms
+ ✓ tests/sickPay.test.ts > second tier: 10 -> 700 0ms
+ ✓ tests/sickPay.test.ts > third tier: 11 -> 800 0ms
+ ✓ tests/sickPay.test.ts > third tier: 12 -> 900 0ms
+ ✓ tests/sickPay.test.ts > third tier: 29 -> 2600 0ms
+ ✓ tests/sickPay.test.ts > third tier: 30 -> 2700 0ms
+ ✓ tests/sickPay.test.ts > round total once: 1 days x 100.01 -> 60.01 0ms
+ ✓ tests/sickPay.test.ts > round total once: 5 days x 100.01 -> 300.03 0ms
+ ✓ tests/sickPay.test.ts > round total once: 6 days x 100.01 -> 380.04 0ms
+ ✓ tests/sickPay.test.ts > round total once: 10 days x 100.01 -> 700.07 0ms
+ ✓ tests/sickPay.test.ts > round total once: 11 days x 100.01 -> 800.08 0ms
+ ✓ tests/sickPay.test.ts > round total once: 30 days x 100.01 -> 2700.27 0ms
+ ✓ tests/sickPay.test.ts > round total once: 1 days x 0.01 -> 0.01 0ms
+ ✓ tests/sickPay.test.ts > round total once: 2 days x 0.01 -> 0.01 0ms
+ ✓ tests/sickPay.test.ts > round total once: 11 days x 333.33 -> 2666.64 0ms
+
+ Test Files  1 passed (1)
+      Tests  35 passed (35)
+   Start at  19:44:51
+   Duration  160ms (transform 48%, import 26%, worker 14%, tests 11%)
+

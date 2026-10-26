@@ -23,5 +23,5 @@ function calcWeightedDays(days: number): number {
 export function calcSickPay(days: number, dailyAverage: number): number {
   assertValidDays(days);
   assertValidDailyAverage(dailyAverage);
-  return dailyAverage * calcWeightedDays(days);
+  return Math.round(dailyAverage * calcWeightedDays(days) * 100) / 100;
 }
