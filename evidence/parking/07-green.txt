@@ -1,0 +1,43 @@
+
+ RUN  v5.0.3 C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 3/repository
+
+ ✓ tests/parking.test.ts > invalid duration -1 2ms
+ ✓ tests/parking.test.ts > invalid duration -60 0ms
+ ✓ tests/parking.test.ts > invalid duration 10.5 0ms
+ ✓ tests/parking.test.ts > invalid duration NaN 0ms
+ ✓ tests/parking.test.ts > invalid duration Infinity 0ms
+ ✓ tests/parking.test.ts > free 0 0ms
+ ✓ tests/parking.test.ts > free 1 0ms
+ ✓ tests/parking.test.ts > free 14 0ms
+ ✓ tests/parking.test.ts > free 15 0ms
+ ✓ tests/parking.test.ts > first hour 16 -> 30 0ms
+ ✓ tests/parking.test.ts > first hour 59 -> 30 0ms
+ ✓ tests/parking.test.ts > first hour 60 -> 30 0ms
+ ✓ tests/parking.test.ts > extra hours 61 -> 50 0ms
+ ✓ tests/parking.test.ts > extra hours 119 -> 50 0ms
+ ✓ tests/parking.test.ts > extra hours 120 -> 50 0ms
+ ✓ tests/parking.test.ts > extra hours 121 -> 70 0ms
+ ✓ tests/parking.test.ts > extra hours 180 -> 70 0ms
+ ✓ tests/parking.test.ts > daily cap 539 -> 190 0ms
+ ✓ tests/parking.test.ts > daily cap 540 -> 190 0ms
+ ✓ tests/parking.test.ts > daily cap 541 -> 200 0ms
+ ✓ tests/parking.test.ts > daily cap 600 -> 200 0ms
+ ✓ tests/parking.test.ts > daily cap 1440 -> 200 0ms
+ ✓ tests/parking.test.ts > night 0 -> 0 0ms
+ ✓ tests/parking.test.ts > night 15 -> 0 0ms
+ ✓ tests/parking.test.ts > night 16 -> 15 0ms
+ ✓ tests/parking.test.ts > night 60 -> 15 0ms
+ ✓ tests/parking.test.ts > night 121 -> 35 0ms
+ ✓ tests/parking.test.ts > night 600 -> 100 0ms
+ ✓ tests/parking.test.ts > weekend 15 night false -> 0 0ms
+ ✓ tests/parking.test.ts > weekend 16 night false -> 24 0ms
+ ✓ tests/parking.test.ts > weekend 600 night false -> 160 0ms
+ ✓ tests/parking.test.ts > weekend 600 night true -> 80 0ms
+ ✓ tests/parking.test.ts > weekend 45 night true -> 12 0ms
+ ✓ tests/parking.test.ts > weekend 121 night true -> 28 0ms
+
+ Test Files  1 passed (1)
+      Tests  34 passed (34)
+   Start at  19:43:37
+   Duration  173ms (transform 49%, import 25%, worker 17%, tests 9%)
+
