@@ -1,0 +1,14 @@
+
+ RUN  v5.0.3 C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 3/repository
+
+ ✓ tests/parking.test.ts > invalid duration -1 2ms
+ ✓ tests/parking.test.ts > invalid duration -60 0ms
+ ✓ tests/parking.test.ts > invalid duration 10.5 0ms
+ ✓ tests/parking.test.ts > invalid duration NaN 0ms
+ ✓ tests/parking.test.ts > invalid duration Infinity 0ms
+
+ Test Files  1 passed (1)
+      Tests  5 passed (5)
+   Start at  19:43:27
+   Duration  155ms (transform 49%, import 29%, worker 15%, tests 7%)
+
