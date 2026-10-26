@@ -1,0 +1,76 @@
+
+ RUN  v5.0.3 C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 3/repository
+
+ ✓ tests/parking.test.ts > invalid duration -1 2ms
+ ✓ tests/parking.test.ts > invalid duration -60 0ms
+ ✓ tests/parking.test.ts > invalid duration 10.5 0ms
+ ✓ tests/parking.test.ts > invalid duration NaN 0ms
+ ✓ tests/parking.test.ts > invalid duration Infinity 0ms
+ ✓ tests/parking.test.ts > free 0 0ms
+ ✓ tests/parking.test.ts > free 1 0ms
+ ✓ tests/parking.test.ts > free 14 0ms
+ ✓ tests/parking.test.ts > free 15 0ms
+ ✓ tests/parking.test.ts > first hour 16 -> 30 0ms
+ ✓ tests/parking.test.ts > first hour 59 -> 30 0ms
+ ✓ tests/parking.test.ts > first hour 60 -> 30 0ms
+ ✓ tests/parking.test.ts > extra hours 61 -> 50 0ms
+ ✓ tests/parking.test.ts > extra hours 119 -> 50 0ms
+ ✓ tests/parking.test.ts > extra hours 120 -> 50 0ms
+ ✓ tests/parking.test.ts > extra hours 121 -> 70 0ms
+ ✓ tests/parking.test.ts > extra hours 180 -> 70 0ms
+ ✓ tests/parking.test.ts > daily cap 539 -> 190 0ms
+ ✓ tests/parking.test.ts > daily cap 540 -> 190 0ms
+ × tests/parking.test.ts > daily cap 541 -> 200 6ms
+   → expected 210 to be 200 // Object.is equality
+ × tests/parking.test.ts > daily cap 600 -> 200 1ms
+   → expected 210 to be 200 // Object.is equality
+ × tests/parking.test.ts > daily cap 1440 -> 200 1ms
+   → expected 490 to be 200 // Object.is equality
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 19 passed (22)
+   Start at  19:43:33
+   Duration  173ms (transform 45%, import 25%, tests 20%, worker 11%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/parking.test.ts > daily cap 541 -> 200
+ FAIL  tests/parking.test.ts > daily cap 600 -> 200
+AssertionError: expected 210 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 210
+
+ ❯ tests/parking.test.ts:32:35
+     30|   [1440, 200],
+     31| ])('daily cap %s -> %s', (minutes, expected) => {
+     32|   expect(calcParkingFee(minutes)).toBe(expected);
+       |                                   ^
+     33| });
+     34|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/parking.test.ts > daily cap 1440 -> 200
+AssertionError: expected 490 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 490
+
+ ❯ tests/parking.test.ts:32:35
+     30|   [1440, 200],
+     31| ])('daily cap %s -> %s', (minutes, expected) => {
+     32|   expect(calcParkingFee(minutes)).toBe(expected);
+       |                                   ^
+     33| });
+     34|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
