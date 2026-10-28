@@ -1,0 +1,28 @@
+<!doctype html><meta charset="utf-8"><style>body{margin:0;padding:28px;background:#f2f5f8;color:#15283c;font:20px Arial}h1{font-size:28px}h2{font-size:21px}pre{padding:22px;background:#132231;color:#ecf4fc;border-radius:10px;font:20px/1.45 Consolas,monospace;white-space:pre-wrap}.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.source{font-size:17px;color:#485b6d}</style><h1>Сервіс нагадувань: 8 днів</h1><p class="source">HTML-перегляд збереженого виводу CLI. HTTP-запити перехоплені MSW.</p><div class="grid"><section><h2>Успіх: npm run demo:lab4 -- 8</h2><pre>{
+  &quot;days&quot;: 8,
+  &quot;mode&quot;: &quot;success&quot;,
+  &quot;result&quot;: {
+    &quot;sent&quot;: true,
+    &quot;messageId&quot;: &quot;DEMO-2&quot;
+  },
+  &quot;requests&quot;: 1,
+  &quot;stored&quot;: {
+    &quot;id&quot;: &quot;DEMO-2&quot;,
+    &quot;email&quot;: &quot;student@example.test&quot;,
+    &quot;createdAt&quot;: &quot;2026-03-07T10:00:00.000Z&quot;,
+    &quot;remindedAt&quot;: &quot;2026-03-15T10:00:00.000Z&quot;,
+    &quot;messageId&quot;: &quot;DEMO-2&quot;
+  }
+}
+</pre></section><section><h2>Відмова: npm run demo:lab4 -- 8 http-error</h2><pre>{
+  &quot;days&quot;: 8,
+  &quot;mode&quot;: &quot;http-error&quot;,
+  &quot;error&quot;: &quot;MAIL_UNAVAILABLE&quot;,
+  &quot;requests&quot;: 1,
+  &quot;stored&quot;: {
+    &quot;id&quot;: &quot;DEMO-2&quot;,
+    &quot;email&quot;: &quot;student@example.test&quot;,
+    &quot;createdAt&quot;: &quot;2026-03-07T10:00:00.000Z&quot;
+  }
+}
+</pre></section></div>

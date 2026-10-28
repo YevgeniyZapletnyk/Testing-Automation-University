@@ -1,0 +1,18 @@
+src/order-service.ts 61ms
+src/retry.ts 6ms
+src/rate-provider.ts 7ms
+src/reminder-service.ts 8ms
+src/clock.ts 1ms
+src/email-gateway.ts 4ms
+tests/order-service.test.ts 16ms
+tests/retry.test.ts 7ms
+tests/rate-provider.test.ts 7ms
+tests/reminder-service.test.ts 13ms
+tests/email-gateway.test.ts 6ms
+tests/reminder-integration.test.ts 6ms
+tests/setup.ts 1ms (unchanged)
+tests/msw/server.ts 1ms
+tests/fakes/in-memory-repository.ts 3ms
+tools/reminder-demo.ts 5ms
+package.json 13ms (unchanged)
+vitest.config.ts 2ms (unchanged)

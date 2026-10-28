@@ -1,0 +1,11 @@
+{
+  "days": 8,
+  "mode": "bad-response",
+  "error": "INVALID_MAIL_RESPONSE",
+  "requests": 1,
+  "stored": {
+    "id": "DEMO-2",
+    "email": "student@example.test",
+    "createdAt": "2026-03-07T10:00:00.000Z"
+  }
+}

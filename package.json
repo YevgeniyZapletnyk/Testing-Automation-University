@@ -12,13 +12,16 @@
     "format:check": "prettier --check .",
     "typecheck": "tsc --noEmit",
     "demo": "node tools/cli.ts",
-    "test:lab3": "vitest run tests/parking.test.ts tests/sickPay.test.ts"
+    "test:lab3": "vitest run tests/parking.test.ts tests/sickPay.test.ts",
+    "test:lab4": "vitest run tests/order-service.test.ts tests/retry.test.ts tests/rate-provider.test.ts tests/reminder-service.test.ts tests/email-gateway.test.ts tests/reminder-integration.test.ts",
+    "demo:lab4": "node --experimental-transform-types tools/reminder-demo.ts"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/node": "^26.6.5",
     "@vitest/coverage-v8": "^5.0.3",
     "eslint": "^10.12.0",
+    "msw": "^2.15.0",
     "prettier": "^3.9.10",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.71.1",

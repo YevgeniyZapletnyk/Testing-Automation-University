@@ -1,0 +1,68 @@
+[
+  {
+    "days": 6,
+    "mode": "success",
+    "result": {
+      "sent": false,
+      "reason": "NOT_DUE"
+    },
+    "requests": 0,
+    "stored": {
+      "id": "DEMO-2",
+      "email": "student@example.test",
+      "createdAt": "2026-03-09T10:00:00.000Z"
+    }
+  },
+  {
+    "days": 7,
+    "mode": "success",
+    "result": {
+      "sent": false,
+      "reason": "NOT_DUE"
+    },
+    "requests": 0,
+    "stored": {
+      "id": "DEMO-2",
+      "email": "student@example.test",
+      "createdAt": "2026-03-08T10:00:00.000Z"
+    }
+  },
+  {
+    "days": 8,
+    "mode": "success",
+    "result": {
+      "sent": true,
+      "messageId": "DEMO-2"
+    },
+    "requests": 1,
+    "stored": {
+      "id": "DEMO-2",
+      "email": "student@example.test",
+      "createdAt": "2026-03-07T10:00:00.000Z",
+      "remindedAt": "2026-03-15T10:00:00.000Z",
+      "messageId": "DEMO-2"
+    }
+  },
+  {
+    "days": 8,
+    "mode": "http-error",
+    "error": "MAIL_UNAVAILABLE",
+    "requests": 1,
+    "stored": {
+      "id": "DEMO-2",
+      "email": "student@example.test",
+      "createdAt": "2026-03-07T10:00:00.000Z"
+    }
+  },
+  {
+    "days": 8,
+    "mode": "bad-response",
+    "error": "INVALID_MAIL_RESPONSE",
+    "requests": 1,
+    "stored": {
+      "id": "DEMO-2",
+      "email": "student@example.test",
+      "createdAt": "2026-03-07T10:00:00.000Z"
+    }
+  }
+]

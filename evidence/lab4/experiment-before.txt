@@ -1,0 +1,1 @@
+JSON report written to C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 4/repository/evidence/lab4/experiment-before.json

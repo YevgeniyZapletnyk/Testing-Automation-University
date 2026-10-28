@@ -1,0 +1,14 @@
+{
+  "days": 6,
+  "mode": "success",
+  "result": {
+    "sent": false,
+    "reason": "NOT_DUE"
+  },
+  "requests": 0,
+  "stored": {
+    "id": "DEMO-2",
+    "email": "student@example.test",
+    "createdAt": "2026-03-09T10:00:00.000Z"
+  }
+}

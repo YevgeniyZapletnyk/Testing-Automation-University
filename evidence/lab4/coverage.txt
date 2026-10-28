@@ -1,0 +1,47 @@
+
+ RUN  v5.0.3 C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 4/repository
+      Coverage enabled with v8
+
+ ✓ tests/vat.test.ts (25 tests) 15ms
+ ✓ tests/order.test.ts (32 tests) 16ms
+ ✓ tests/bmi.test.ts (13 tests) 14ms
+ ✓ tests/retry.test.ts (10 tests) 22ms
+ ✓ tests/parking.test.ts (35 tests) 15ms
+ ✓ tests/order-service.test.ts (12 tests) 22ms
+ ✓ tests/reminder-service.test.ts (15 tests) 25ms
+ ✓ tests/sickPay.test.ts (35 tests) 15ms
+ ✓ tests/reminder-integration.test.ts (4 tests) 45ms
+ ✓ tests/email-gateway.test.ts (14 tests) 56ms
+ ✓ tests/rate-provider.test.ts (12 tests) 39ms
+ ✓ tests/temperature.test.ts (4 tests) 8ms
+
+ Test Files  12 passed (12)
+      Tests  211 passed (211)
+   Start at  08:12:17
+   Duration  1.22s (setup 76%, transform 11%, worker 6%, tests 5%, import 2%)
+
+JSON report written to C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 4/repository/evidence/lab4/final-tests.json
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |     100 |      100 |     100 |     100 |                   
+ bmi.ts            |     100 |      100 |     100 |     100 |                   
+ clock.ts          |     100 |      100 |     100 |     100 |                   
+ email-gateway.ts  |     100 |      100 |     100 |     100 |                   
+ order-service.ts  |     100 |      100 |     100 |     100 |                   
+ order.ts          |     100 |      100 |     100 |     100 |                   
+ parking.ts        |     100 |      100 |     100 |     100 |                   
+ rate-provider.ts  |     100 |      100 |     100 |     100 |                   
+ ...der-service.ts |     100 |      100 |     100 |     100 |                   
+ retry.ts          |     100 |      100 |     100 |     100 |                   
+ sickPay.ts        |     100 |      100 |     100 |     100 |                   
+ temperature.ts    |     100 |      100 |     100 |     100 |                   
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 100% ( 142/142 )
+Branches     : 100% ( 100/100 )
+Functions    : 100% ( 29/29 )
+Lines        : 100% ( 128/128 )
+================================================================================

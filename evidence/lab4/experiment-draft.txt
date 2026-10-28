@@ -1,0 +1,38 @@
+
+ RUN  v5.0.3 C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 4/repository
+
+ ✓ tests/order-service.test.ts > OrderService: test doubles > O01: 100 USD at 41 gives 4100 UAH 3ms
+ ✓ tests/order-service.test.ts > OrderService: test doubles > O02: one notification contains recipient and amount 1ms
+ ✓ tests/order-service.test.ts > OrderService: test doubles > O03: invalid amount 0 has no side effects 1ms
+ ✓ tests/order-service.test.ts > OrderService: test doubles > O03: invalid amount -1 has no side effects 0ms
+ ✓ tests/order-service.test.ts > OrderService: test doubles > O03: invalid amount NaN has no side effects 0ms
+ ✓ tests/order-service.test.ts > OrderService: test doubles > O03: invalid amount Infinity has no side effects 0ms
+ ✓ tests/order-service.test.ts > OrderService: test doubles > O04: saved state equals returned record 0ms
+ ✓ tests/order-service.test.ts > OrderService: test doubles > O05: rate failure leaves store empty and sends no mail 0ms
+ ✓ tests/order-service.test.ts > OrderService: test doubles > O06: createdAt uses the frozen clock 0ms
+ × tests/order-service.test.ts > OrderService: test doubles > O07: save called once (interaction experiment) 2ms
+   → expected "vi.fn()" to be called 1 times, but got 2 times
+ ✓ tests/order-service.test.ts > OrderService: test doubles > O08: repository failure prevents notification 0ms
+ ✓ tests/order-service.test.ts > OrderService: test doubles > O09: notifier failure propagates after saving 0ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 11 passed (12)
+   Start at  08:12:16
+   Duration  391ms (setup 73%, transform 17%, tests 5%, worker 3%, import 2%)
+
+JSON report written to C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 4/repository/evidence/lab4/experiment-draft.json
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/order-service.test.ts > OrderService: test doubles > O07: save called once (interaction experiment)
+AssertionError: expected "vi.fn()" to be called 1 times, but got 2 times
+ ❯ tests/order-service.test.ts:72:23
+     70|     };
+     71|     await new OrderService(rates, repo, notifier).placeOrder(input);
+     72|     expect(repo.save).toHaveBeenCalledTimes(1);
+       |                       ^
+     73|   });
+     74|   it('O08: repository failure prevents notification', async () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
