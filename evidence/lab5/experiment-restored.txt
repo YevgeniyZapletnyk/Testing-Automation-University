@@ -1,0 +1,35 @@
+
+ RUN  v5.0.3 C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 5/repository
+
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A01: create checks status, values and headers 34ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A02: create has a persisted effect 10ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A03: POST matches strict JSON Schema 23ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects empty without saving 7ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects missing without saving 5ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects not array without saving 7ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects negative price without saving 5ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects string price without saving 5ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects null price without saving 5ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects zero qty without saving 5ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects fraction qty without saving 5ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects negative qty without saving 4ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects missing sku without saving 4ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects blank sku without saving 4ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects null item without saving 4ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects overflow without saving 5ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A05: bob@example.com price 0 gives total 60 4ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A05: bob@example.com price 999.99 gives total 1059.99 4ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A05: bob@example.com price 1000 gives total 1000 6ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A05: bob@example.com price 1999.99 gives total 1999.99 4ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A05: bob@example.com price 2000 gives total 1900 4ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A05: alice@example.com price 500 gives total 510 4ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A05: alice@example.com price 2000 gives total 1700 4ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A06: delete is idempotent by final state, 204 has no body 10ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A07: GET matches schema 4ms
+
+ Test Files  1 passed (1)
+      Tests  25 passed (25)
+   Start at  10:26:41
+   Duration  504ms (tests 45%, import 43%, transform 12%, worker 1%)
+
+JSON report written to C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 5/repository/evidence/lab5/experiment-restored.json

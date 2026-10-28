@@ -1,0 +1,89 @@
+
+ RUN  v5.0.3 C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 5/repository
+      Coverage enabled with v8
+
+ ✓ tests/api/access.test.ts > Lab5 access > B01: successful login returns token 61ms
+ ✓ tests/api/access.test.ts > Lab5 access > B02: invalid login {} 6ms
+ ✓ tests/api/access.test.ts > Lab5 access > B02: invalid login {"email":"bob@example.com","password":"wrong"} 3ms
+ ✓ tests/api/access.test.ts > Lab5 access > B02: invalid login {"email":"unknown@example.com","password":"Secret123"} 3ms
+ ✓ tests/api/access.test.ts > Lab5 access > B03: all protected methods reject missing authorization 15ms
+ ✓ tests/api/access.test.ts > Lab5 access > B03: all protected methods reject fake authorization 11ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A01: create checks status, values and headers 43ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A02: create has a persisted effect 11ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A03: POST matches strict JSON Schema 31ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects empty without saving 9ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P01: empty page has schema and total 0 69ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P02: page returns correct slice, total and persisted resources 19ms
+ ✓ tests/api/access.test.ts > Lab5 access > B03: all protected methods reject raw authorization 13ms
+ ✓ tests/api/access.test.ts > Lab5 access > B03: all protected methods reject basic authorization 11ms
+ ✓ tests/api/access.test.ts > Lab5 access > B04: чужі GET і DELETE return 404 and preserve owner resource 15ms
+ ✓ tests/api/access.test.ts > Lab5 access > B05: unknown resource returns 404 6ms
+ ✓ tests/api/access.test.ts > Lab5 access > B06: new app has isolated tokens and orders 10ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects missing without saving 8ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects not array without saving 9ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects negative price without saving 7ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects string price without saving 7ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects null price without saving 7ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects zero qty without saving 7ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects fraction qty without saving 6ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects negative qty without saving 5ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects missing sku without saving 6ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects blank sku without saving 7ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects null item without saving 8ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects overflow without saving 8ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A05: bob@example.com price 0 gives total 60 7ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A05: bob@example.com price 999.99 gives total 1059.99 7ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A05: bob@example.com price 1000 gives total 1000 8ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P03: defaults limit 10 offset 0 32ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P04: valid boundary ?limit=100&offset=0 7ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P04: valid boundary ?limit=1 7ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P04: valid boundary ?offset=1 6ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P04: valid boundary ?limit=001&offset=000 6ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P05: end or beyond ?limit=1&offset=2 8ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P05: end or beyond ?limit=1&offset=3 9ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P05: end or beyond ?offset=9007199254740991 10ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P06: invalid ?limit=0 returns 400 without modifying state 12ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P06: invalid ?limit=-1 returns 400 without modifying state 9ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P06: invalid ?limit=101 returns 400 without modifying state 9ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A05: bob@example.com price 1999.99 gives total 1999.99 6ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A05: bob@example.com price 2000 gives total 1900 7ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A05: alice@example.com price 500 gives total 510 6ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A05: alice@example.com price 2000 gives total 1700 7ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A06: delete is idempotent by final state, 204 has no body 12ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A07: GET matches schema 6ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P06: invalid ?limit=1.5 returns 400 without modifying state 8ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P06: invalid ?limit=abc returns 400 without modifying state 8ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P06: invalid ?limit= returns 400 without modifying state 9ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P06: invalid ?limit=1e1 returns 400 without modifying state 7ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P06: invalid ?limit=%201 returns 400 without modifying state 7ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P06: invalid ?limit=%2B1 returns 400 without modifying state 7ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P06: invalid ?limit=1&limit=2 returns 400 without modifying state 7ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P06: invalid ?limit[]=1 returns 400 without modifying state 9ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P06: invalid ?offset=-1 returns 400 without modifying state 7ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P06: invalid ?offset=0.5 returns 400 without modifying state 7ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P06: invalid ?offset=abc returns 400 without modifying state 6ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P06: invalid ?offset= returns 400 without modifying state 7ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P06: invalid ?offset=1e2 returns 400 without modifying state 7ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P06: invalid ?offset=9007199254740992 returns 400 without modifying state 7ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P06: invalid ?offset=0&offset=1 returns 400 without modifying state 7ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P06: invalid ?offset[]=0 returns 400 without modifying state 6ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P07: filters owner before slicing and counting 13ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P08: delete decreases count and shifts page 10ms
+ ✓ tests/api/pagination.test.ts > Lab5 variant2 pagination > P09: GET repeated page leaves state unchanged 8ms
+
+ Test Files  3 passed (3)
+      Tests  68 passed (68)
+   Start at  10:26:41
+   Duration  797ms (tests 47%, import 37%, transform 12%, worker 4%)
+
+JSON report written to C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 5/repository/evidence/lab5/api-tests.json
+ % Coverage report from v8
+No files with missing coverage.
+1 file fully covered.
+
+=============================== Coverage summary ===============================
+Statements   : 100% ( 81/81 )
+Branches     : 100% ( 60/60 )
+Functions    : 100% ( 15/15 )
+Lines        : 100% ( 73/73 )
+================================================================================

@@ -14,17 +14,32 @@
     "demo": "node tools/cli.ts",
     "test:lab3": "vitest run tests/parking.test.ts tests/sickPay.test.ts",
     "test:lab4": "vitest run tests/order-service.test.ts tests/retry.test.ts tests/rate-provider.test.ts tests/reminder-service.test.ts tests/email-gateway.test.ts tests/reminder-integration.test.ts",
-    "demo:lab4": "node --experimental-transform-types tools/reminder-demo.ts"
+    "demo:lab4": "node --experimental-transform-types tools/reminder-demo.ts",
+    "start": "tsx src/server.ts",
+    "test:lab5": "vitest run --config vitest.api.config.ts",
+    "coverage:lab5": "vitest run --config vitest.api.config.ts --coverage",
+    "test:all": "npm test && npm run test:lab5",
+    "postman:run": "newman run postman/orders.postman_collection.json --reporters cli,junit,json --reporter-junit-export results/newman.xml --reporter-json-export results/newman.json"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@types/express": "^5.0.6",
     "@types/node": "^26.6.5",
+    "@types/supertest": "^7.2.1",
     "@vitest/coverage-v8": "^5.0.3",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
     "eslint": "^10.12.0",
     "msw": "^2.15.0",
+    "newman": "^6.2.3",
     "prettier": "^3.9.10",
+    "supertest": "^7.3.1",
+    "tsx": "^4.23.15",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.71.1",
     "vitest": "^5.0.3"
+  },
+  "dependencies": {
+    "express": "^5.3.0"
   }
 }

@@ -1,0 +1,11 @@
+--- before/orders.postman_collection.json
++++ after/orders.postman_collection.json
+@@ -191,7 +191,7 @@
+               "pm.test('JSON Content-Type', () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+               "const labResponse = pm.response.json();",
+               "pm.collectionVariables.set('order1', labResponse.id);",
+-              "pm.test('Total with delivery', () => { pm.expect(labResponse.total).to.eql(160); });",
++              "pm.test('Order total includes delivery', () => { pm.expect(labResponse.total).to.eql(160); });",
+               "pm.test('Location', () => { pm.expect(pm.response.headers.get('Location')).to.eql('/orders/'+labResponse.id); });",
+               "pm.test('Internal field absent', () => { pm.expect(labResponse).not.to.have.property('ownerId'); });"
+             ]

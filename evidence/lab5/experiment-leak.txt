@@ -1,0 +1,98 @@
+
+ RUN  v5.0.3 C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 5/repository
+
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A01: create checks status, values and headers 34ms
+ × tests/api/orders.test.ts > Lab5 orders API > A02: create has a persisted effect 15ms
+   → expected { …(6) } to deeply equal { …(7) }
+ × tests/api/orders.test.ts > Lab5 orders API > A03: POST matches strict JSON Schema 24ms
+   → expected [ { instancePath: '', …(4) } ] to deeply equal []
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects empty without saving 8ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects missing without saving 7ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects not array without saving 6ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects negative price without saving 5ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects string price without saving 5ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects null price without saving 6ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects zero qty without saving 5ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects fraction qty without saving 4ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects negative qty without saving 5ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects missing sku without saving 5ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects blank sku without saving 5ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects null item without saving 4ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A04: rejects overflow without saving 4ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A05: bob@example.com price 0 gives total 60 4ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A05: bob@example.com price 999.99 gives total 1059.99 6ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A05: bob@example.com price 1000 gives total 1000 5ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A05: bob@example.com price 1999.99 gives total 1999.99 4ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A05: bob@example.com price 2000 gives total 1900 4ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A05: alice@example.com price 500 gives total 510 4ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A05: alice@example.com price 2000 gives total 1700 5ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A06: delete is idempotent by final state, 204 has no body 10ms
+ ✓ tests/api/orders.test.ts > Lab5 orders API > A07: GET matches schema 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/api/orders.test.ts > Lab5 orders API > A02: create has a persisted effect
+AssertionError: expected { …(6) } to deeply equal { …(7) }
+
+- Expected
++ Received
+
+@@ -6,10 +6,9 @@
+        "price": 500,
+        "qty": 1,
+        "sku": "SKU-A",
+      },
+    ],
+-   "ownerId": "u2",
+    "subtotal": 500,
+    "tier": "basic",
+    "total": 560,
+  }
+
+ ❯ tests/api/orders.test.ts:30:22
+     28|       .auth(token, { type: 'bearer' });
+     29|     expect(res.status).toBe(200);
+     30|     expect(res.body).toEqual(created);
+       |                      ^
+     31|   });
+     32|   it('A03: POST matches strict JSON Schema', async () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/api/orders.test.ts > Lab5 orders API > A03: POST matches strict JSON Schema
+AssertionError: expected [ { instancePath: '', …(4) } ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   {
++     "instancePath": "",
++     "keyword": "additionalProperties",
++     "message": "must NOT have additional properties",
++     "params": {
++       "additionalProperty": "ownerId",
++     },
++     "schemaPath": "#/additionalProperties",
++   },
++ ]
+
+ ❯ expectSchema tests/api/schemas.ts:42:33
+     40|   const validate = ajv.compile(schema);
+     41|   validate(data);
+     42|   expect(validate.errors ?? []).toEqual([]);
+       |                                 ^
+     43| }
+     44|
+ ❯ tests/api/orders.test.ts:33:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 23 passed (25)
+   Start at  10:26:40
+   Duration  517ms (tests 47%, import 41%, transform 12%, worker 1%)
+
+JSON report written to C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 5/repository/evidence/lab5/experiment-leak.json

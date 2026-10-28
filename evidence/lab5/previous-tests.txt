@@ -1,0 +1,22 @@
+
+ RUN  v5.0.3 C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 5/repository
+
+ ✓ tests/sickPay.test.ts (35 tests) 14ms
+ ✓ tests/parking.test.ts (35 tests) 14ms
+ ✓ tests/vat.test.ts (25 tests) 15ms
+ ✓ tests/retry.test.ts (10 tests) 21ms
+ ✓ tests/reminder-service.test.ts (15 tests) 22ms
+ ✓ tests/bmi.test.ts (13 tests) 12ms
+ ✓ tests/order-service.test.ts (12 tests) 22ms
+ ✓ tests/order.test.ts (32 tests) 15ms
+ ✓ tests/rate-provider.test.ts (12 tests) 54ms
+ ✓ tests/email-gateway.test.ts (14 tests) 56ms
+ ✓ tests/reminder-integration.test.ts (4 tests) 31ms
+ ✓ tests/temperature.test.ts (4 tests) 6ms
+
+ Test Files  12 passed (12)
+      Tests  211 passed (211)
+   Start at  10:26:43
+   Duration  1.20s (setup 81%, transform 11%, tests 4%, worker 2%, import 2%)
+
+JSON report written to C:/Users/jevge/Desktop/Лабораторні 4 курс 1 семестр/Лабораторні роботи/Автоматизація тестування/Lab 5/repository/evidence/lab5/previous-tests.json

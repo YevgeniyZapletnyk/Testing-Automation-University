@@ -1,0 +1,193 @@
+
+> lab1-bmi-variant2@1.0.0 postman:run
+> newman run postman/orders.postman_collection.json --reporters cli,junit,json --reporter-junit-export results/newman.xml --reporter-json-export results/newman.json
+
+(node:112380) [DEP0176] DeprecationWarning: fs.F_OK is deprecated, use fs.constants.F_OK instead
+(Use `node --trace-deprecation ...` to show where the warning was created)
+newman
+
+Lab 5 - Orders API - Variant 2 - Zapletniuk
+
+→ 01 Login Bob
+  POST http://127.0.0.1:3000/auth/login [200 OK, 289B, 18ms]
+  √  HTTP 200
+  √  JSON Content-Type
+
+→ 02 Login Alice
+  POST http://127.0.0.1:3000/auth/login [200 OK, 289B, 2ms]
+  √  HTTP 200
+  √  JSON Content-Type
+
+→ 03 Baseline list
+  GET http://127.0.0.1:3000/orders?limit=100&offset=0 [200 OK, 253B, 2ms]
+  √  HTTP 200
+  √  JSON Content-Type
+
+→ 04 Create Bob order 1
+  POST http://127.0.0.1:3000/orders [201 Created, 469B, 3ms]
+  √  HTTP 201
+  √  JSON Content-Type
+  √  Total with delivery
+  √  Location
+  √  Internal field absent
+
+→ 05 Create Bob order 2
+  POST http://127.0.0.1:3000/orders [201 Created, 469B, 2ms]
+  √  HTTP 201
+  √  JSON Content-Type
+  √  Total with delivery
+  √  Location
+  √  Internal field absent
+
+→ 06 Create Bob order 3
+  POST http://127.0.0.1:3000/orders [201 Created, 469B, 2ms]
+  √  HTTP 201
+  √  JSON Content-Type
+  √  Total with delivery
+  √  Location
+  √  Internal field absent
+
+→ 07 Create Alice order
+  POST http://127.0.0.1:3000/orders [201 Created, 468B, 1ms]
+  √  HTTP 201
+  √  JSON Content-Type
+
+→ 08 Get Bob order
+  GET http://127.0.0.1:3000/orders/da53c361-f77b-4a27-b9e7-ac6831e3b3e3 [200 OK, 408B, 1ms]
+  √  HTTP 200
+  √  JSON Content-Type
+  √  Saved value
+
+→ 09 Page at baseline offset
+  GET http://127.0.0.1:3000/orders?limit=1&offset=0 [200 OK, 428B, 2ms]
+  √  HTTP 200
+  √  JSON Content-Type
+  √  X-Total-Count
+  √  First created order
+
+→ 10 Second page
+  GET http://127.0.0.1:3000/orders?limit=1&offset=1 [200 OK, 428B, 2ms]
+  √  HTTP 200
+  √  JSON Content-Type
+  √  X-Total-Count
+  √  Second created order
+
+→ 11 Beyond final page
+  GET http://127.0.0.1:3000/orders?limit=1&offset=9007199254740991 [200 OK, 253B, 1ms]
+  √  HTTP 200
+  √  JSON Content-Type
+  √  Empty page
+  √  X-Total-Count
+
+→ 12 Invalid limit
+  GET http://127.0.0.1:3000/orders?limit=0&offset=0 [400 Bad Request, 273B, 1ms]
+  √  HTTP 400
+  √  JSON Content-Type
+  √  Error code
+
+→ 13 Invalid offset
+  GET http://127.0.0.1:3000/orders?limit=1&offset=-1 [400 Bad Request, 273B, 1ms]
+  √  HTTP 400
+  √  JSON Content-Type
+  √  Error code
+
+→ 14 Missing token
+  GET http://127.0.0.1:3000/orders?limit=1&offset=0 [401 Unauthorized, 268B, 1ms]
+  √  HTTP 401
+  √  JSON Content-Type
+  √  Error code
+
+→ 15 Forged token
+  GET http://127.0.0.1:3000/orders?limit=1&offset=0 [401 Unauthorized, 268B, 2ms]
+  √  HTTP 401
+  √  JSON Content-Type
+  √  Error code
+
+→ 16 Foreign order GET
+  GET http://127.0.0.1:3000/orders/e7075daa-e78b-441f-bba3-7dc4136609d6 [404 Not Found, 262B, 1ms]
+  √  HTTP 404
+  √  JSON Content-Type
+  √  Error code
+
+→ 17 Foreign order DELETE
+  DELETE http://127.0.0.1:3000/orders/e7075daa-e78b-441f-bba3-7dc4136609d6 [404 Not Found, 262B, 1ms]
+  √  HTTP 404
+  √  JSON Content-Type
+  √  Error code
+
+→ 18 Owner can still GET
+  GET http://127.0.0.1:3000/orders/e7075daa-e78b-441f-bba3-7dc4136609d6 [200 OK, 407B, 1ms]
+  √  HTTP 200
+  √  JSON Content-Type
+  √  Gold total
+
+→ 19 Invalid order
+  POST http://127.0.0.1:3000/orders [400 Bad Request, 266B, 1ms]
+  √  HTTP 400
+  √  JSON Content-Type
+  √  Error code
+
+→ 20 Delete Bob order 1
+  DELETE http://127.0.0.1:3000/orders/da53c361-f77b-4a27-b9e7-ac6831e3b3e3 [204 No Content, 134B, 1ms]
+  √  HTTP 204
+  √  204 empty body
+
+→ 21 Repeated DELETE
+  DELETE http://127.0.0.1:3000/orders/da53c361-f77b-4a27-b9e7-ac6831e3b3e3 [404 Not Found, 262B, 1ms]
+  √  HTTP 404
+  √  JSON Content-Type
+  √  Error code
+
+→ 22 GET deleted order
+  GET http://127.0.0.1:3000/orders/da53c361-f77b-4a27-b9e7-ac6831e3b3e3 [404 Not Found, 262B, 1ms]
+  √  HTTP 404
+  √  JSON Content-Type
+  √  Error code
+
+→ 23 Count after deletion
+  GET http://127.0.0.1:3000/orders?limit=1&offset=0 [200 OK, 428B, 1ms]
+  √  HTTP 200
+  √  JSON Content-Type
+  √  X-Total-Count
+  √  Page shifted
+
+→ 24 Cleanup order2
+  DELETE http://127.0.0.1:3000/orders/793fcc8d-2d2c-4216-8c66-834a7c322890 [204 No Content, 134B, 1ms]
+  √  HTTP 204
+  √  204 empty body
+
+→ 25 Cleanup order3
+  DELETE http://127.0.0.1:3000/orders/83e695e1-ed58-4bba-b52c-d1aca8917405 [204 No Content, 134B, 1ms]
+  √  HTTP 204
+  √  204 empty body
+
+→ 26 Cleanup aliceOrder
+  DELETE http://127.0.0.1:3000/orders/e7075daa-e78b-441f-bba3-7dc4136609d6 [204 No Content, 134B, 1ms]
+  √  HTTP 204
+  √  204 empty body
+
+→ 27 Verify cleanup
+  GET http://127.0.0.1:3000/orders?limit=100&offset=0 [200 OK, 253B, 1ms]
+  √  HTTP 200
+  √  JSON Content-Type
+  √  X-Total-Count
+
+┌─────────────────────────┬─────────────────┬─────────────────┐
+│                         │        executed │          failed │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│              iterations │               1 │               0 │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│                requests │              27 │               0 │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│            test-scripts │              27 │               0 │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│      prerequest-scripts │               1 │               0 │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│              assertions │              83 │               0 │
+├─────────────────────────┴─────────────────┴─────────────────┤
+│ total run duration: 2.4s                                    │
+├─────────────────────────────────────────────────────────────┤
+│ total data received: 1.87kB (approx)                        │
+├─────────────────────────────────────────────────────────────┤
+│ average response time: 1ms [min: 1ms, max: 18ms, s.d.: 3ms] │
+└─────────────────────────────────────────────────────────────┘

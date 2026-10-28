@@ -1,0 +1,882 @@
+{
+  "info": {
+    "name": "Lab 5 - Orders API - Variant 2 - Zapletniuk",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Run the complete collection in order against the local lab server. It authenticates Bob/Alice, creates its own orders, tests pagination and all endpoints, then deletes only the orders created by this run. Start: npm start. Default baseUrl: http://127.0.0.1:3000."
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:3000",
+      "type": "string"
+    },
+    {
+      "key": "invalidToken",
+      "value": "invalid-token",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "aliceToken",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "baseline",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "secondOffset",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "order1",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "order2",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "order3",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "aliceOrder",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "01 Login Bob",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/auth/login",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"bob@example.com\",\n  \"password\": \"Secret123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('JSON Content-Type', () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+              "const labResponse = pm.response.json();",
+              "pm.collectionVariables.set('token', labResponse.accessToken);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "02 Login Alice",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/auth/login",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"alice@example.com\",\n  \"password\": \"Secret123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('JSON Content-Type', () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+              "const labResponse = pm.response.json();",
+              "pm.collectionVariables.set('aliceToken', labResponse.accessToken);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "03 Baseline list",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/orders?limit=100&offset=0"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('JSON Content-Type', () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+              "const labResponse = pm.response.json();",
+              "pm.collectionVariables.set('baseline', Number(pm.response.headers.get('X-Total-Count')));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "04 Create Bob order 1",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/orders",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"items\": [\n    {\n      \"sku\": \"SKU-A\",\n      \"price\": 100,\n      \"qty\": 1\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('JSON Content-Type', () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+              "const labResponse = pm.response.json();",
+              "pm.collectionVariables.set('order1', labResponse.id);",
+              "pm.test('Total with delivery', () => { pm.expect(labResponse.total).to.eql(160); });",
+              "pm.test('Location', () => { pm.expect(pm.response.headers.get('Location')).to.eql('/orders/'+labResponse.id); });",
+              "pm.test('Internal field absent', () => { pm.expect(labResponse).not.to.have.property('ownerId'); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "05 Create Bob order 2",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/orders",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"items\": [\n    {\n      \"sku\": \"SKU-A\",\n      \"price\": 200,\n      \"qty\": 1\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('JSON Content-Type', () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+              "const labResponse = pm.response.json();",
+              "pm.collectionVariables.set('order2', labResponse.id);",
+              "pm.test('Total with delivery', () => { pm.expect(labResponse.total).to.eql(260); });",
+              "pm.test('Location', () => { pm.expect(pm.response.headers.get('Location')).to.eql('/orders/'+labResponse.id); });",
+              "pm.test('Internal field absent', () => { pm.expect(labResponse).not.to.have.property('ownerId'); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "06 Create Bob order 3",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/orders",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"items\": [\n    {\n      \"sku\": \"SKU-A\",\n      \"price\": 300,\n      \"qty\": 1\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('JSON Content-Type', () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+              "const labResponse = pm.response.json();",
+              "pm.collectionVariables.set('order3', labResponse.id);",
+              "pm.test('Total with delivery', () => { pm.expect(labResponse.total).to.eql(360); });",
+              "pm.test('Location', () => { pm.expect(pm.response.headers.get('Location')).to.eql('/orders/'+labResponse.id); });",
+              "pm.test('Internal field absent', () => { pm.expect(labResponse).not.to.have.property('ownerId'); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "07 Create Alice order",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{aliceToken}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/orders",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"items\": [\n    {\n      \"sku\": \"SKU-A\",\n      \"price\": 500,\n      \"qty\": 1\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+              "pm.test('JSON Content-Type', () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+              "const labResponse = pm.response.json();",
+              "pm.collectionVariables.set('aliceOrder', labResponse.id);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "08 Get Bob order",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/orders/{{order1}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('JSON Content-Type', () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+              "const labResponse = pm.response.json();",
+              "pm.test('Saved value', () => { pm.expect(labResponse.total).to.eql(160); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "09 Page at baseline offset",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/orders?limit=1&offset={{baseline}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('JSON Content-Type', () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+              "const labResponse = pm.response.json();",
+              "pm.test('X-Total-Count', () => { pm.expect(pm.response.headers.get('X-Total-Count')).to.eql(String(Number(pm.collectionVariables.get('baseline'))+3)); });",
+              "pm.test('First created order', () => { pm.expect(labResponse.map(o=>o.id)).to.eql([pm.collectionVariables.get('order1')]); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "10 Second page",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/orders?limit=1&offset={{secondOffset}}"
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.collectionVariables.set('secondOffset', Number(pm.collectionVariables.get('baseline')) + 1);"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('JSON Content-Type', () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+              "const labResponse = pm.response.json();",
+              "pm.test('X-Total-Count', () => { pm.expect(pm.response.headers.get('X-Total-Count')).to.eql(String(Number(pm.collectionVariables.get('baseline'))+3)); });",
+              "pm.test('Second created order', () => { pm.expect(labResponse.map(o=>o.id)).to.eql([pm.collectionVariables.get('order2')]); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "11 Beyond final page",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/orders?limit=1&offset=9007199254740991"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('JSON Content-Type', () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+              "const labResponse = pm.response.json();",
+              "pm.test('Empty page', () => { pm.expect(labResponse).to.eql([]); });",
+              "pm.test('X-Total-Count', () => { pm.expect(pm.response.headers.get('X-Total-Count')).to.eql(String(Number(pm.collectionVariables.get('baseline'))+3)); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "12 Invalid limit",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/orders?limit=0&offset=0"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 400', () => pm.response.to.have.status(400));",
+              "pm.test('JSON Content-Type', () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+              "const labResponse = pm.response.json();",
+              "pm.test('Error code', () => { pm.expect(labResponse).to.eql({code:'INVALID_PAGINATION'}); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "13 Invalid offset",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/orders?limit=1&offset=-1"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 400', () => pm.response.to.have.status(400));",
+              "pm.test('JSON Content-Type', () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+              "const labResponse = pm.response.json();",
+              "pm.test('Error code', () => { pm.expect(labResponse).to.eql({code:'INVALID_PAGINATION'}); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "14 Missing token",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/orders?limit=1&offset=0"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 401', () => pm.response.to.have.status(401));",
+              "pm.test('JSON Content-Type', () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+              "const labResponse = pm.response.json();",
+              "pm.test('Error code', () => { pm.expect(labResponse).to.eql({code:'UNAUTHORIZED'}); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "15 Forged token",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{invalidToken}}"
+          }
+        ],
+        "url": "{{baseUrl}}/orders?limit=1&offset=0"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 401', () => pm.response.to.have.status(401));",
+              "pm.test('JSON Content-Type', () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+              "const labResponse = pm.response.json();",
+              "pm.test('Error code', () => { pm.expect(labResponse).to.eql({code:'UNAUTHORIZED'}); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "16 Foreign order GET",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/orders/{{aliceOrder}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 404', () => pm.response.to.have.status(404));",
+              "pm.test('JSON Content-Type', () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+              "const labResponse = pm.response.json();",
+              "pm.test('Error code', () => { pm.expect(labResponse).to.eql({code:'NOT_FOUND'}); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "17 Foreign order DELETE",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/orders/{{aliceOrder}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 404', () => pm.response.to.have.status(404));",
+              "pm.test('JSON Content-Type', () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+              "const labResponse = pm.response.json();",
+              "pm.test('Error code', () => { pm.expect(labResponse).to.eql({code:'NOT_FOUND'}); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "18 Owner can still GET",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{aliceToken}}"
+          }
+        ],
+        "url": "{{baseUrl}}/orders/{{aliceOrder}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('JSON Content-Type', () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+              "const labResponse = pm.response.json();",
+              "pm.test('Gold total', () => { pm.expect(labResponse.total).to.eql(510); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "19 Invalid order",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/orders",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"items\": []\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 400', () => pm.response.to.have.status(400));",
+              "pm.test('JSON Content-Type', () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+              "const labResponse = pm.response.json();",
+              "pm.test('Error code', () => { pm.expect(labResponse).to.eql({code:'EMPTY_ORDER'}); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "20 Delete Bob order 1",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/orders/{{order1}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 204', () => pm.response.to.have.status(204));",
+              "pm.test('204 empty body', () => { pm.expect(pm.response.text()).to.eql(''); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "21 Repeated DELETE",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/orders/{{order1}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 404', () => pm.response.to.have.status(404));",
+              "pm.test('JSON Content-Type', () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+              "const labResponse = pm.response.json();",
+              "pm.test('Error code', () => { pm.expect(labResponse).to.eql({code:'NOT_FOUND'}); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "22 GET deleted order",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/orders/{{order1}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 404', () => pm.response.to.have.status(404));",
+              "pm.test('JSON Content-Type', () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+              "const labResponse = pm.response.json();",
+              "pm.test('Error code', () => { pm.expect(labResponse).to.eql({code:'NOT_FOUND'}); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "23 Count after deletion",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/orders?limit=1&offset={{baseline}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('JSON Content-Type', () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+              "const labResponse = pm.response.json();",
+              "pm.test('X-Total-Count', () => { pm.expect(pm.response.headers.get('X-Total-Count')).to.eql(String(Number(pm.collectionVariables.get('baseline'))+2)); });",
+              "pm.test('Page shifted', () => { pm.expect(labResponse.map(o=>o.id)).to.eql([pm.collectionVariables.get('order2')]); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "24 Cleanup order2",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/orders/{{order2}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 204', () => pm.response.to.have.status(204));",
+              "pm.test('204 empty body', () => { pm.expect(pm.response.text()).to.eql(''); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "25 Cleanup order3",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/orders/{{order3}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 204', () => pm.response.to.have.status(204));",
+              "pm.test('204 empty body', () => { pm.expect(pm.response.text()).to.eql(''); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "26 Cleanup aliceOrder",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{aliceToken}}"
+          }
+        ],
+        "url": "{{baseUrl}}/orders/{{aliceOrder}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 204', () => pm.response.to.have.status(204));",
+              "pm.test('204 empty body', () => { pm.expect(pm.response.text()).to.eql(''); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "27 Verify cleanup",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/orders?limit=100&offset=0"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('JSON Content-Type', () => pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+              "const labResponse = pm.response.json();",
+              "pm.test('X-Total-Count', () => { pm.expect(pm.response.headers.get('X-Total-Count')).to.eql(String(Number(pm.collectionVariables.get('baseline')))); });"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

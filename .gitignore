@@ -6,3 +6,6 @@ dist/
 *.log
 .npm-cache/
 reports/
+
+coverage-api/
+results/
