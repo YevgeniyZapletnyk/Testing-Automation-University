@@ -1,0 +1,48 @@
+Source
+Runner
+Environment
+none
+Iterations
+1
+Duration
+1s 748ms
+All tests
+21
+Errors
+0
+Avg. Resp. Time
+6 ms
+RUN SUMMARY
+List
+Grid
+1
+POST
+01 Login
+3
+ | 
+0
+POST
+02 Create order
+5
+ | 
+0
+GET
+03 Get created order
+3
+ | 
+0
+GET
+04 Pagination valid
+5
+ | 
+0
+GET
+05 Pagination invalid
+3
+ | 
+0
+DELETE
+06 Delete order
+2
+ | 
+0

@@ -1,6 +1,6 @@
 [
   {
-    "name": "01 Login Bob",
+    "name": "01 Login",
     "status": 200,
     "headers": [
       {
@@ -17,11 +17,11 @@
       },
       {
         "key": "ETag",
-        "value": "W/\"36-/urAggokp1aggvuVSoB/tjOHTbo\""
+        "value": "W/\"36-Ol99xmIJM3xFfs5/sDadT2LQdGY\""
       },
       {
         "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:49 GMT"
+        "value": "Wed, 28 Oct 2026 12:46:44 GMT"
       },
       {
         "key": "Connection",
@@ -33,90 +33,12 @@
       }
     ],
     "body": {
-      "accessToken": "b28b3a7f-96d6-4f86-8714-e554d953b5b8"
+      "accessToken": "1cb0fd1c-cfeb-444c-a2ad-a6a0e1fb8bb4"
     },
-    "assertions": 2
+    "assertions": 3
   },
   {
-    "name": "02 Login Alice",
-    "status": 200,
-    "headers": [
-      {
-        "key": "X-Powered-By",
-        "value": "Express"
-      },
-      {
-        "key": "Content-Type",
-        "value": "application/json; charset=utf-8"
-      },
-      {
-        "key": "Content-Length",
-        "value": "54"
-      },
-      {
-        "key": "ETag",
-        "value": "W/\"36-IFPq1i1BRC7h2dHIzKb5e5yPmXg\""
-      },
-      {
-        "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:49 GMT"
-      },
-      {
-        "key": "Connection",
-        "value": "keep-alive"
-      },
-      {
-        "key": "Keep-Alive",
-        "value": "timeout=5"
-      }
-    ],
-    "body": {
-      "accessToken": "fd8cf64c-75cd-4b4c-908c-1bc5c0959e8f"
-    },
-    "assertions": 2
-  },
-  {
-    "name": "03 Baseline list",
-    "status": 200,
-    "headers": [
-      {
-        "key": "X-Powered-By",
-        "value": "Express"
-      },
-      {
-        "key": "X-Total-Count",
-        "value": "0"
-      },
-      {
-        "key": "Content-Type",
-        "value": "application/json; charset=utf-8"
-      },
-      {
-        "key": "Content-Length",
-        "value": "2"
-      },
-      {
-        "key": "ETag",
-        "value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
-      },
-      {
-        "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:49 GMT"
-      },
-      {
-        "key": "Connection",
-        "value": "keep-alive"
-      },
-      {
-        "key": "Keep-Alive",
-        "value": "timeout=5"
-      }
-    ],
-    "body": [],
-    "assertions": 2
-  },
-  {
-    "name": "04 Create Bob order 1",
+    "name": "02 Create order",
     "status": 201,
     "headers": [
       {
@@ -125,7 +47,7 @@
       },
       {
         "key": "Location",
-        "value": "/orders/da53c361-f77b-4a27-b9e7-ac6831e3b3e3"
+        "value": "/orders/7787268e-d09e-4004-b232-0f83cca0e40e"
       },
       {
         "key": "Content-Type",
@@ -137,11 +59,11 @@
       },
       {
         "key": "ETag",
-        "value": "W/\"ac-dmxu/3KU9G3H2ycerjYjLud9Gf4\""
+        "value": "W/\"ac-bTUZxhsxb8aX1z10BUpA4FZbea8\""
       },
       {
         "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:49 GMT"
+        "value": "Wed, 28 Oct 2026 12:46:44 GMT"
       },
       {
         "key": "Connection",
@@ -153,167 +75,8 @@
       }
     ],
     "body": {
-      "id": "da53c361-f77b-4a27-b9e7-ac6831e3b3e3",
+      "id": "7787268e-d09e-4004-b232-0f83cca0e40e",
       "tier": "basic",
-      "items": [
-        {
-          "sku": "SKU-A",
-          "price": 100,
-          "qty": 1
-        }
-      ],
-      "subtotal": 100,
-      "total": 160,
-      "createdAt": "2026-10-28T08:26:49.609Z"
-    },
-    "assertions": 5
-  },
-  {
-    "name": "05 Create Bob order 2",
-    "status": 201,
-    "headers": [
-      {
-        "key": "X-Powered-By",
-        "value": "Express"
-      },
-      {
-        "key": "Location",
-        "value": "/orders/793fcc8d-2d2c-4216-8c66-834a7c322890"
-      },
-      {
-        "key": "Content-Type",
-        "value": "application/json; charset=utf-8"
-      },
-      {
-        "key": "Content-Length",
-        "value": "172"
-      },
-      {
-        "key": "ETag",
-        "value": "W/\"ac-HYy/kp+xVG1DITPT2y0e7aTilp0\""
-      },
-      {
-        "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:49 GMT"
-      },
-      {
-        "key": "Connection",
-        "value": "keep-alive"
-      },
-      {
-        "key": "Keep-Alive",
-        "value": "timeout=5"
-      }
-    ],
-    "body": {
-      "id": "793fcc8d-2d2c-4216-8c66-834a7c322890",
-      "tier": "basic",
-      "items": [
-        {
-          "sku": "SKU-A",
-          "price": 200,
-          "qty": 1
-        }
-      ],
-      "subtotal": 200,
-      "total": 260,
-      "createdAt": "2026-10-28T08:26:49.702Z"
-    },
-    "assertions": 5
-  },
-  {
-    "name": "06 Create Bob order 3",
-    "status": 201,
-    "headers": [
-      {
-        "key": "X-Powered-By",
-        "value": "Express"
-      },
-      {
-        "key": "Location",
-        "value": "/orders/83e695e1-ed58-4bba-b52c-d1aca8917405"
-      },
-      {
-        "key": "Content-Type",
-        "value": "application/json; charset=utf-8"
-      },
-      {
-        "key": "Content-Length",
-        "value": "172"
-      },
-      {
-        "key": "ETag",
-        "value": "W/\"ac-15U7499TkRYqCU2QwrjTMce0gUA\""
-      },
-      {
-        "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:49 GMT"
-      },
-      {
-        "key": "Connection",
-        "value": "keep-alive"
-      },
-      {
-        "key": "Keep-Alive",
-        "value": "timeout=5"
-      }
-    ],
-    "body": {
-      "id": "83e695e1-ed58-4bba-b52c-d1aca8917405",
-      "tier": "basic",
-      "items": [
-        {
-          "sku": "SKU-A",
-          "price": 300,
-          "qty": 1
-        }
-      ],
-      "subtotal": 300,
-      "total": 360,
-      "createdAt": "2026-10-28T08:26:49.795Z"
-    },
-    "assertions": 5
-  },
-  {
-    "name": "07 Create Alice order",
-    "status": 201,
-    "headers": [
-      {
-        "key": "X-Powered-By",
-        "value": "Express"
-      },
-      {
-        "key": "Location",
-        "value": "/orders/e7075daa-e78b-441f-bba3-7dc4136609d6"
-      },
-      {
-        "key": "Content-Type",
-        "value": "application/json; charset=utf-8"
-      },
-      {
-        "key": "Content-Length",
-        "value": "171"
-      },
-      {
-        "key": "ETag",
-        "value": "W/\"ab-YV8TAscMokJ20ITjbxzXrBFA+x8\""
-      },
-      {
-        "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:49 GMT"
-      },
-      {
-        "key": "Connection",
-        "value": "keep-alive"
-      },
-      {
-        "key": "Keep-Alive",
-        "value": "timeout=5"
-      }
-    ],
-    "body": {
-      "id": "e7075daa-e78b-441f-bba3-7dc4136609d6",
-      "tier": "gold",
       "items": [
         {
           "sku": "SKU-A",
@@ -322,13 +85,13 @@
         }
       ],
       "subtotal": 500,
-      "total": 510,
-      "createdAt": "2026-10-28T08:26:49.888Z"
+      "total": 560,
+      "createdAt": "2026-10-28T12:46:44.388Z"
     },
-    "assertions": 2
+    "assertions": 5
   },
   {
-    "name": "08 Get Bob order",
+    "name": "03 Get created order",
     "status": 200,
     "headers": [
       {
@@ -345,11 +108,11 @@
       },
       {
         "key": "ETag",
-        "value": "W/\"ac-dmxu/3KU9G3H2ycerjYjLud9Gf4\""
+        "value": "W/\"ac-bTUZxhsxb8aX1z10BUpA4FZbea8\""
       },
       {
         "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:49 GMT"
+        "value": "Wed, 28 Oct 2026 12:46:44 GMT"
       },
       {
         "key": "Connection",
@@ -361,23 +124,23 @@
       }
     ],
     "body": {
-      "id": "da53c361-f77b-4a27-b9e7-ac6831e3b3e3",
+      "id": "7787268e-d09e-4004-b232-0f83cca0e40e",
       "tier": "basic",
       "items": [
         {
           "sku": "SKU-A",
-          "price": 100,
+          "price": 500,
           "qty": 1
         }
       ],
-      "subtotal": 100,
-      "total": 160,
-      "createdAt": "2026-10-28T08:26:49.609Z"
+      "subtotal": 500,
+      "total": 560,
+      "createdAt": "2026-10-28T12:46:44.388Z"
     },
     "assertions": 3
   },
   {
-    "name": "09 Page at baseline offset",
+    "name": "04 Pagination valid",
     "status": 200,
     "headers": [
       {
@@ -386,7 +149,7 @@
       },
       {
         "key": "X-Total-Count",
-        "value": "3"
+        "value": "1"
       },
       {
         "key": "Content-Type",
@@ -398,11 +161,11 @@
       },
       {
         "key": "ETag",
-        "value": "W/\"ae-erw10GifDz1Fo0JEEfi8TTIyeK4\""
+        "value": "W/\"ae-Tzv/F4AaxekLz8J0OHDS/ntQSSU\""
       },
       {
         "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:50 GMT"
+        "value": "Wed, 28 Oct 2026 12:46:44 GMT"
       },
       {
         "key": "Connection",
@@ -415,119 +178,24 @@
     ],
     "body": [
       {
-        "id": "da53c361-f77b-4a27-b9e7-ac6831e3b3e3",
+        "id": "7787268e-d09e-4004-b232-0f83cca0e40e",
         "tier": "basic",
         "items": [
           {
             "sku": "SKU-A",
-            "price": 100,
+            "price": 500,
             "qty": 1
           }
         ],
-        "subtotal": 100,
-        "total": 160,
-        "createdAt": "2026-10-28T08:26:49.609Z"
+        "subtotal": 500,
+        "total": 560,
+        "createdAt": "2026-10-28T12:46:44.388Z"
       }
     ],
-    "assertions": 4
+    "assertions": 5
   },
   {
-    "name": "10 Second page",
-    "status": 200,
-    "headers": [
-      {
-        "key": "X-Powered-By",
-        "value": "Express"
-      },
-      {
-        "key": "X-Total-Count",
-        "value": "3"
-      },
-      {
-        "key": "Content-Type",
-        "value": "application/json; charset=utf-8"
-      },
-      {
-        "key": "Content-Length",
-        "value": "174"
-      },
-      {
-        "key": "ETag",
-        "value": "W/\"ae-ldQKk3HQb2DpkWJVFQeaZ3xeTk8\""
-      },
-      {
-        "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:50 GMT"
-      },
-      {
-        "key": "Connection",
-        "value": "keep-alive"
-      },
-      {
-        "key": "Keep-Alive",
-        "value": "timeout=5"
-      }
-    ],
-    "body": [
-      {
-        "id": "793fcc8d-2d2c-4216-8c66-834a7c322890",
-        "tier": "basic",
-        "items": [
-          {
-            "sku": "SKU-A",
-            "price": 200,
-            "qty": 1
-          }
-        ],
-        "subtotal": 200,
-        "total": 260,
-        "createdAt": "2026-10-28T08:26:49.702Z"
-      }
-    ],
-    "assertions": 4
-  },
-  {
-    "name": "11 Beyond final page",
-    "status": 200,
-    "headers": [
-      {
-        "key": "X-Powered-By",
-        "value": "Express"
-      },
-      {
-        "key": "X-Total-Count",
-        "value": "3"
-      },
-      {
-        "key": "Content-Type",
-        "value": "application/json; charset=utf-8"
-      },
-      {
-        "key": "Content-Length",
-        "value": "2"
-      },
-      {
-        "key": "ETag",
-        "value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
-      },
-      {
-        "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:50 GMT"
-      },
-      {
-        "key": "Connection",
-        "value": "keep-alive"
-      },
-      {
-        "key": "Keep-Alive",
-        "value": "timeout=5"
-      }
-    ],
-    "body": [],
-    "assertions": 4
-  },
-  {
-    "name": "12 Invalid limit",
+    "name": "05 Pagination invalid",
     "status": 400,
     "headers": [
       {
@@ -548,7 +216,7 @@
       },
       {
         "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:50 GMT"
+        "value": "Wed, 28 Oct 2026 12:46:44 GMT"
       },
       {
         "key": "Connection",
@@ -565,284 +233,7 @@
     "assertions": 3
   },
   {
-    "name": "13 Invalid offset",
-    "status": 400,
-    "headers": [
-      {
-        "key": "X-Powered-By",
-        "value": "Express"
-      },
-      {
-        "key": "Content-Type",
-        "value": "application/json; charset=utf-8"
-      },
-      {
-        "key": "Content-Length",
-        "value": "29"
-      },
-      {
-        "key": "ETag",
-        "value": "W/\"1d-qGDGF1kay+J5249NYjk18V7kynk\""
-      },
-      {
-        "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:50 GMT"
-      },
-      {
-        "key": "Connection",
-        "value": "keep-alive"
-      },
-      {
-        "key": "Keep-Alive",
-        "value": "timeout=5"
-      }
-    ],
-    "body": {
-      "code": "INVALID_PAGINATION"
-    },
-    "assertions": 3
-  },
-  {
-    "name": "14 Missing token",
-    "status": 401,
-    "headers": [
-      {
-        "key": "X-Powered-By",
-        "value": "Express"
-      },
-      {
-        "key": "Content-Type",
-        "value": "application/json; charset=utf-8"
-      },
-      {
-        "key": "Content-Length",
-        "value": "23"
-      },
-      {
-        "key": "ETag",
-        "value": "W/\"17-zTb1lFciB7MLX+a8qY8283TQ1mU\""
-      },
-      {
-        "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:50 GMT"
-      },
-      {
-        "key": "Connection",
-        "value": "keep-alive"
-      },
-      {
-        "key": "Keep-Alive",
-        "value": "timeout=5"
-      }
-    ],
-    "body": {
-      "code": "UNAUTHORIZED"
-    },
-    "assertions": 3
-  },
-  {
-    "name": "15 Forged token",
-    "status": 401,
-    "headers": [
-      {
-        "key": "X-Powered-By",
-        "value": "Express"
-      },
-      {
-        "key": "Content-Type",
-        "value": "application/json; charset=utf-8"
-      },
-      {
-        "key": "Content-Length",
-        "value": "23"
-      },
-      {
-        "key": "ETag",
-        "value": "W/\"17-zTb1lFciB7MLX+a8qY8283TQ1mU\""
-      },
-      {
-        "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:50 GMT"
-      },
-      {
-        "key": "Connection",
-        "value": "keep-alive"
-      },
-      {
-        "key": "Keep-Alive",
-        "value": "timeout=5"
-      }
-    ],
-    "body": {
-      "code": "UNAUTHORIZED"
-    },
-    "assertions": 3
-  },
-  {
-    "name": "16 Foreign order GET",
-    "status": 404,
-    "headers": [
-      {
-        "key": "X-Powered-By",
-        "value": "Express"
-      },
-      {
-        "key": "Content-Type",
-        "value": "application/json; charset=utf-8"
-      },
-      {
-        "key": "Content-Length",
-        "value": "20"
-      },
-      {
-        "key": "ETag",
-        "value": "W/\"14-l/U/F2xdXYNopy81034rpKAPppw\""
-      },
-      {
-        "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:50 GMT"
-      },
-      {
-        "key": "Connection",
-        "value": "keep-alive"
-      },
-      {
-        "key": "Keep-Alive",
-        "value": "timeout=5"
-      }
-    ],
-    "body": {
-      "code": "NOT_FOUND"
-    },
-    "assertions": 3
-  },
-  {
-    "name": "17 Foreign order DELETE",
-    "status": 404,
-    "headers": [
-      {
-        "key": "X-Powered-By",
-        "value": "Express"
-      },
-      {
-        "key": "Content-Type",
-        "value": "application/json; charset=utf-8"
-      },
-      {
-        "key": "Content-Length",
-        "value": "20"
-      },
-      {
-        "key": "ETag",
-        "value": "W/\"14-l/U/F2xdXYNopy81034rpKAPppw\""
-      },
-      {
-        "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:50 GMT"
-      },
-      {
-        "key": "Connection",
-        "value": "keep-alive"
-      },
-      {
-        "key": "Keep-Alive",
-        "value": "timeout=5"
-      }
-    ],
-    "body": {
-      "code": "NOT_FOUND"
-    },
-    "assertions": 3
-  },
-  {
-    "name": "18 Owner can still GET",
-    "status": 200,
-    "headers": [
-      {
-        "key": "X-Powered-By",
-        "value": "Express"
-      },
-      {
-        "key": "Content-Type",
-        "value": "application/json; charset=utf-8"
-      },
-      {
-        "key": "Content-Length",
-        "value": "171"
-      },
-      {
-        "key": "ETag",
-        "value": "W/\"ab-YV8TAscMokJ20ITjbxzXrBFA+x8\""
-      },
-      {
-        "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:50 GMT"
-      },
-      {
-        "key": "Connection",
-        "value": "keep-alive"
-      },
-      {
-        "key": "Keep-Alive",
-        "value": "timeout=5"
-      }
-    ],
-    "body": {
-      "id": "e7075daa-e78b-441f-bba3-7dc4136609d6",
-      "tier": "gold",
-      "items": [
-        {
-          "sku": "SKU-A",
-          "price": 500,
-          "qty": 1
-        }
-      ],
-      "subtotal": 500,
-      "total": 510,
-      "createdAt": "2026-10-28T08:26:49.888Z"
-    },
-    "assertions": 3
-  },
-  {
-    "name": "19 Invalid order",
-    "status": 400,
-    "headers": [
-      {
-        "key": "X-Powered-By",
-        "value": "Express"
-      },
-      {
-        "key": "Content-Type",
-        "value": "application/json; charset=utf-8"
-      },
-      {
-        "key": "Content-Length",
-        "value": "22"
-      },
-      {
-        "key": "ETag",
-        "value": "W/\"16-iOrl/AaKctOhN/gDpqvd94FubJ0\""
-      },
-      {
-        "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:50 GMT"
-      },
-      {
-        "key": "Connection",
-        "value": "keep-alive"
-      },
-      {
-        "key": "Keep-Alive",
-        "value": "timeout=5"
-      }
-    ],
-    "body": {
-      "code": "EMPTY_ORDER"
-    },
-    "assertions": 3
-  },
-  {
-    "name": "20 Delete Bob order 1",
+    "name": "06 Delete order",
     "status": 204,
     "headers": [
       {
@@ -851,7 +242,7 @@
       },
       {
         "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:51 GMT"
+        "value": "Wed, 28 Oct 2026 12:46:44 GMT"
       },
       {
         "key": "Connection",
@@ -864,248 +255,5 @@
     ],
     "body": null,
     "assertions": 2
-  },
-  {
-    "name": "21 Repeated DELETE",
-    "status": 404,
-    "headers": [
-      {
-        "key": "X-Powered-By",
-        "value": "Express"
-      },
-      {
-        "key": "Content-Type",
-        "value": "application/json; charset=utf-8"
-      },
-      {
-        "key": "Content-Length",
-        "value": "20"
-      },
-      {
-        "key": "ETag",
-        "value": "W/\"14-l/U/F2xdXYNopy81034rpKAPppw\""
-      },
-      {
-        "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:51 GMT"
-      },
-      {
-        "key": "Connection",
-        "value": "keep-alive"
-      },
-      {
-        "key": "Keep-Alive",
-        "value": "timeout=5"
-      }
-    ],
-    "body": {
-      "code": "NOT_FOUND"
-    },
-    "assertions": 3
-  },
-  {
-    "name": "22 GET deleted order",
-    "status": 404,
-    "headers": [
-      {
-        "key": "X-Powered-By",
-        "value": "Express"
-      },
-      {
-        "key": "Content-Type",
-        "value": "application/json; charset=utf-8"
-      },
-      {
-        "key": "Content-Length",
-        "value": "20"
-      },
-      {
-        "key": "ETag",
-        "value": "W/\"14-l/U/F2xdXYNopy81034rpKAPppw\""
-      },
-      {
-        "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:51 GMT"
-      },
-      {
-        "key": "Connection",
-        "value": "keep-alive"
-      },
-      {
-        "key": "Keep-Alive",
-        "value": "timeout=5"
-      }
-    ],
-    "body": {
-      "code": "NOT_FOUND"
-    },
-    "assertions": 3
-  },
-  {
-    "name": "23 Count after deletion",
-    "status": 200,
-    "headers": [
-      {
-        "key": "X-Powered-By",
-        "value": "Express"
-      },
-      {
-        "key": "X-Total-Count",
-        "value": "2"
-      },
-      {
-        "key": "Content-Type",
-        "value": "application/json; charset=utf-8"
-      },
-      {
-        "key": "Content-Length",
-        "value": "174"
-      },
-      {
-        "key": "ETag",
-        "value": "W/\"ae-ldQKk3HQb2DpkWJVFQeaZ3xeTk8\""
-      },
-      {
-        "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:51 GMT"
-      },
-      {
-        "key": "Connection",
-        "value": "keep-alive"
-      },
-      {
-        "key": "Keep-Alive",
-        "value": "timeout=5"
-      }
-    ],
-    "body": [
-      {
-        "id": "793fcc8d-2d2c-4216-8c66-834a7c322890",
-        "tier": "basic",
-        "items": [
-          {
-            "sku": "SKU-A",
-            "price": 200,
-            "qty": 1
-          }
-        ],
-        "subtotal": 200,
-        "total": 260,
-        "createdAt": "2026-10-28T08:26:49.702Z"
-      }
-    ],
-    "assertions": 4
-  },
-  {
-    "name": "24 Cleanup order2",
-    "status": 204,
-    "headers": [
-      {
-        "key": "X-Powered-By",
-        "value": "Express"
-      },
-      {
-        "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:51 GMT"
-      },
-      {
-        "key": "Connection",
-        "value": "keep-alive"
-      },
-      {
-        "key": "Keep-Alive",
-        "value": "timeout=5"
-      }
-    ],
-    "body": null,
-    "assertions": 2
-  },
-  {
-    "name": "25 Cleanup order3",
-    "status": 204,
-    "headers": [
-      {
-        "key": "X-Powered-By",
-        "value": "Express"
-      },
-      {
-        "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:51 GMT"
-      },
-      {
-        "key": "Connection",
-        "value": "keep-alive"
-      },
-      {
-        "key": "Keep-Alive",
-        "value": "timeout=5"
-      }
-    ],
-    "body": null,
-    "assertions": 2
-  },
-  {
-    "name": "26 Cleanup aliceOrder",
-    "status": 204,
-    "headers": [
-      {
-        "key": "X-Powered-By",
-        "value": "Express"
-      },
-      {
-        "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:51 GMT"
-      },
-      {
-        "key": "Connection",
-        "value": "keep-alive"
-      },
-      {
-        "key": "Keep-Alive",
-        "value": "timeout=5"
-      }
-    ],
-    "body": null,
-    "assertions": 2
-  },
-  {
-    "name": "27 Verify cleanup",
-    "status": 200,
-    "headers": [
-      {
-        "key": "X-Powered-By",
-        "value": "Express"
-      },
-      {
-        "key": "X-Total-Count",
-        "value": "0"
-      },
-      {
-        "key": "Content-Type",
-        "value": "application/json; charset=utf-8"
-      },
-      {
-        "key": "Content-Length",
-        "value": "2"
-      },
-      {
-        "key": "ETag",
-        "value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
-      },
-      {
-        "key": "Date",
-        "value": "Wed, 28 Oct 2026 08:26:51 GMT"
-      },
-      {
-        "key": "Connection",
-        "value": "keep-alive"
-      },
-      {
-        "key": "Keep-Alive",
-        "value": "timeout=5"
-      }
-    ],
-    "body": [],
-    "assertions": 3
   }
 ]

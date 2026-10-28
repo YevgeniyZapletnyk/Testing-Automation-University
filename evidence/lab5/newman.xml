@@ -1,140 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Lab 5 - Orders API - Variant 2 - Zapletniuk" tests="27" time="0.053">
-  <testsuite name="01 Login Bob" id="aacf3570-d3bd-4d11-a902-87748fe185bb" timestamp="2026-10-28T08:26:49.300Z" tests="2" failures="0" errors="0" time="0.018">
-    <testcase name="HTTP 200" time="0.018" classname="01LoginBob"/>
-    <testcase name="JSON Content-Type" time="0.018" classname="01LoginBob"/>
+<testsuites name="Lab 5 - Orders API - Variant 2 - Zapletniuk" tests="6" time="0.237">
+  <testsuite name="01 Login" id="bf8ae68d-1c49-426e-93a4-eb2416984df9" timestamp="2026-10-28T12:46:44.043Z" tests="3" failures="0" errors="0" time="0.222">
+    <testcase name="HTTP 200" time="0.222" classname="01Login"/>
+    <testcase name="JSON Content-Type" time="0.222" classname="01Login"/>
+    <testcase name="Token received" time="0.222" classname="01Login"/>
   </testsuite>
-  <testsuite name="02 Login Alice" id="f1a8292a-4912-4bc5-a092-5ce6cc7b55a4" timestamp="2026-10-28T08:26:49.300Z" tests="2" failures="0" errors="0" time="0.002">
-    <testcase name="HTTP 200" time="0.002" classname="02LoginAlice"/>
-    <testcase name="JSON Content-Type" time="0.002" classname="02LoginAlice"/>
+  <testsuite name="02 Create order" id="8396f39d-f701-4122-84a1-087857e7fdca" timestamp="2026-10-28T12:46:44.043Z" tests="5" failures="0" errors="0" time="0.004">
+    <testcase name="HTTP 201" time="0.004" classname="02CreateOrder"/>
+    <testcase name="JSON Content-Type" time="0.004" classname="02CreateOrder"/>
+    <testcase name="Total with delivery" time="0.004" classname="02CreateOrder"/>
+    <testcase name="Location" time="0.004" classname="02CreateOrder"/>
+    <testcase name="No ownerId" time="0.004" classname="02CreateOrder"/>
   </testsuite>
-  <testsuite name="03 Baseline list" id="989031ad-b010-41d6-b109-c3bb043482aa" timestamp="2026-10-28T08:26:49.300Z" tests="2" failures="0" errors="0" time="0.002">
-    <testcase name="HTTP 200" time="0.002" classname="03BaselineList"/>
-    <testcase name="JSON Content-Type" time="0.002" classname="03BaselineList"/>
+  <testsuite name="03 Get created order" id="f7e96f80-bd4e-4152-a69e-ea219f9a63a9" timestamp="2026-10-28T12:46:44.043Z" tests="3" failures="0" errors="0" time="0.003">
+    <testcase name="HTTP 200" time="0.003" classname="03GetCreatedOrder"/>
+    <testcase name="JSON Content-Type" time="0.003" classname="03GetCreatedOrder"/>
+    <testcase name="Order persisted" time="0.003" classname="03GetCreatedOrder"/>
   </testsuite>
-  <testsuite name="04 Create Bob order 1" id="955a9159-1024-44af-9c34-13f941157917" timestamp="2026-10-28T08:26:49.300Z" tests="5" failures="0" errors="0" time="0.003">
-    <testcase name="HTTP 201" time="0.003" classname="04CreateBobOrder1"/>
-    <testcase name="JSON Content-Type" time="0.003" classname="04CreateBobOrder1"/>
-    <testcase name="Total with delivery" time="0.003" classname="04CreateBobOrder1"/>
-    <testcase name="Location" time="0.003" classname="04CreateBobOrder1"/>
-    <testcase name="Internal field absent" time="0.003" classname="04CreateBobOrder1"/>
+  <testsuite name="04 Pagination valid" id="824778b3-6593-42a1-a2c5-17e24f4149fb" timestamp="2026-10-28T12:46:44.043Z" tests="5" failures="0" errors="0" time="0.003">
+    <testcase name="HTTP 200" time="0.003" classname="04PaginationValid"/>
+    <testcase name="JSON Content-Type" time="0.003" classname="04PaginationValid"/>
+    <testcase name="One item on page" time="0.003" classname="04PaginationValid"/>
+    <testcase name="Page contains created order" time="0.003" classname="04PaginationValid"/>
+    <testcase name="X-Total-Count is 1" time="0.003" classname="04PaginationValid"/>
   </testsuite>
-  <testsuite name="05 Create Bob order 2" id="af1c51e6-62b1-44b7-847f-27565e3c9c56" timestamp="2026-10-28T08:26:49.300Z" tests="5" failures="0" errors="0" time="0.002">
-    <testcase name="HTTP 201" time="0.002" classname="05CreateBobOrder2"/>
-    <testcase name="JSON Content-Type" time="0.002" classname="05CreateBobOrder2"/>
-    <testcase name="Total with delivery" time="0.002" classname="05CreateBobOrder2"/>
-    <testcase name="Location" time="0.002" classname="05CreateBobOrder2"/>
-    <testcase name="Internal field absent" time="0.002" classname="05CreateBobOrder2"/>
+  <testsuite name="05 Pagination invalid" id="5f3df278-986b-4e32-8969-fefb1ccf9b57" timestamp="2026-10-28T12:46:44.043Z" tests="3" failures="0" errors="0" time="0.002">
+    <testcase name="HTTP 400" time="0.002" classname="05PaginationInvalid"/>
+    <testcase name="JSON Content-Type" time="0.002" classname="05PaginationInvalid"/>
+    <testcase name="Invalid pagination" time="0.002" classname="05PaginationInvalid"/>
   </testsuite>
-  <testsuite name="06 Create Bob order 3" id="4519c153-48fd-48b3-994f-33e7ce5c2921" timestamp="2026-10-28T08:26:49.300Z" tests="5" failures="0" errors="0" time="0.002">
-    <testcase name="HTTP 201" time="0.002" classname="06CreateBobOrder3"/>
-    <testcase name="JSON Content-Type" time="0.002" classname="06CreateBobOrder3"/>
-    <testcase name="Total with delivery" time="0.002" classname="06CreateBobOrder3"/>
-    <testcase name="Location" time="0.002" classname="06CreateBobOrder3"/>
-    <testcase name="Internal field absent" time="0.002" classname="06CreateBobOrder3"/>
-  </testsuite>
-  <testsuite name="07 Create Alice order" id="4dc4a67a-fbbe-4825-b162-acfa267a0678" timestamp="2026-10-28T08:26:49.300Z" tests="2" failures="0" errors="0" time="0.001">
-    <testcase name="HTTP 201" time="0.001" classname="07CreateAliceOrder"/>
-    <testcase name="JSON Content-Type" time="0.001" classname="07CreateAliceOrder"/>
-  </testsuite>
-  <testsuite name="08 Get Bob order" id="7e76476e-000c-417d-a20f-43a16b48e1a8" timestamp="2026-10-28T08:26:49.300Z" tests="3" failures="0" errors="0" time="0.001">
-    <testcase name="HTTP 200" time="0.001" classname="08GetBobOrder"/>
-    <testcase name="JSON Content-Type" time="0.001" classname="08GetBobOrder"/>
-    <testcase name="Saved value" time="0.001" classname="08GetBobOrder"/>
-  </testsuite>
-  <testsuite name="09 Page at baseline offset" id="29ae053b-5592-464e-a35d-39db3d43b97a" timestamp="2026-10-28T08:26:49.300Z" tests="4" failures="0" errors="0" time="0.002">
-    <testcase name="HTTP 200" time="0.002" classname="09PageAtBaselineOffset"/>
-    <testcase name="JSON Content-Type" time="0.002" classname="09PageAtBaselineOffset"/>
-    <testcase name="X-Total-Count" time="0.002" classname="09PageAtBaselineOffset"/>
-    <testcase name="First created order" time="0.002" classname="09PageAtBaselineOffset"/>
-  </testsuite>
-  <testsuite name="10 Second page" id="b8731035-bf4a-47a6-8a06-5be687018312" timestamp="2026-10-28T08:26:49.300Z" tests="4" failures="0" errors="0" time="0.002">
-    <testcase name="HTTP 200" time="0.002" classname="10SecondPage"/>
-    <testcase name="JSON Content-Type" time="0.002" classname="10SecondPage"/>
-    <testcase name="X-Total-Count" time="0.002" classname="10SecondPage"/>
-    <testcase name="Second created order" time="0.002" classname="10SecondPage"/>
-  </testsuite>
-  <testsuite name="11 Beyond final page" id="533d5ab6-020a-408d-b8f3-e72650f93bfc" timestamp="2026-10-28T08:26:49.300Z" tests="4" failures="0" errors="0" time="0.001">
-    <testcase name="HTTP 200" time="0.001" classname="11BeyondFinalPage"/>
-    <testcase name="JSON Content-Type" time="0.001" classname="11BeyondFinalPage"/>
-    <testcase name="Empty page" time="0.001" classname="11BeyondFinalPage"/>
-    <testcase name="X-Total-Count" time="0.001" classname="11BeyondFinalPage"/>
-  </testsuite>
-  <testsuite name="12 Invalid limit" id="b3605cf3-393f-40d9-915c-f8901144e02b" timestamp="2026-10-28T08:26:49.300Z" tests="3" failures="0" errors="0" time="0.001">
-    <testcase name="HTTP 400" time="0.001" classname="12InvalidLimit"/>
-    <testcase name="JSON Content-Type" time="0.001" classname="12InvalidLimit"/>
-    <testcase name="Error code" time="0.001" classname="12InvalidLimit"/>
-  </testsuite>
-  <testsuite name="13 Invalid offset" id="91340d43-814d-4589-b123-038d4d623424" timestamp="2026-10-28T08:26:49.300Z" tests="3" failures="0" errors="0" time="0.001">
-    <testcase name="HTTP 400" time="0.001" classname="13InvalidOffset"/>
-    <testcase name="JSON Content-Type" time="0.001" classname="13InvalidOffset"/>
-    <testcase name="Error code" time="0.001" classname="13InvalidOffset"/>
-  </testsuite>
-  <testsuite name="14 Missing token" id="65cd9d92-8f1a-4155-a7b1-ccd847ab3802" timestamp="2026-10-28T08:26:49.300Z" tests="3" failures="0" errors="0" time="0.001">
-    <testcase name="HTTP 401" time="0.001" classname="14MissingToken"/>
-    <testcase name="JSON Content-Type" time="0.001" classname="14MissingToken"/>
-    <testcase name="Error code" time="0.001" classname="14MissingToken"/>
-  </testsuite>
-  <testsuite name="15 Forged token" id="4a7d2c9c-3136-4c18-9cb6-e167874315b7" timestamp="2026-10-28T08:26:49.300Z" tests="3" failures="0" errors="0" time="0.002">
-    <testcase name="HTTP 401" time="0.002" classname="15ForgedToken"/>
-    <testcase name="JSON Content-Type" time="0.002" classname="15ForgedToken"/>
-    <testcase name="Error code" time="0.002" classname="15ForgedToken"/>
-  </testsuite>
-  <testsuite name="16 Foreign order GET" id="a0a49e08-3443-4757-9506-19dca91246f8" timestamp="2026-10-28T08:26:49.300Z" tests="3" failures="0" errors="0" time="0.001">
-    <testcase name="HTTP 404" time="0.001" classname="16ForeignOrderGet"/>
-    <testcase name="JSON Content-Type" time="0.001" classname="16ForeignOrderGet"/>
-    <testcase name="Error code" time="0.001" classname="16ForeignOrderGet"/>
-  </testsuite>
-  <testsuite name="17 Foreign order DELETE" id="97bd8cc3-936a-400c-8251-b93e1c74c66c" timestamp="2026-10-28T08:26:49.300Z" tests="3" failures="0" errors="0" time="0.001">
-    <testcase name="HTTP 404" time="0.001" classname="17ForeignOrderDelete"/>
-    <testcase name="JSON Content-Type" time="0.001" classname="17ForeignOrderDelete"/>
-    <testcase name="Error code" time="0.001" classname="17ForeignOrderDelete"/>
-  </testsuite>
-  <testsuite name="18 Owner can still GET" id="9ec1c444-94c4-441d-ba56-f891d1ace55c" timestamp="2026-10-28T08:26:49.300Z" tests="3" failures="0" errors="0" time="0.001">
-    <testcase name="HTTP 200" time="0.001" classname="18OwnerCanStillGet"/>
-    <testcase name="JSON Content-Type" time="0.001" classname="18OwnerCanStillGet"/>
-    <testcase name="Gold total" time="0.001" classname="18OwnerCanStillGet"/>
-  </testsuite>
-  <testsuite name="19 Invalid order" id="a97baa0f-b484-41b7-804e-2509bf1ac5ab" timestamp="2026-10-28T08:26:49.300Z" tests="3" failures="0" errors="0" time="0.001">
-    <testcase name="HTTP 400" time="0.001" classname="19InvalidOrder"/>
-    <testcase name="JSON Content-Type" time="0.001" classname="19InvalidOrder"/>
-    <testcase name="Error code" time="0.001" classname="19InvalidOrder"/>
-  </testsuite>
-  <testsuite name="20 Delete Bob order 1" id="0a232f9a-bd2a-4cb6-9eab-d3b1f052bd73" timestamp="2026-10-28T08:26:49.300Z" tests="2" failures="0" errors="0" time="0.001">
-    <testcase name="HTTP 204" time="0.001" classname="20DeleteBobOrder1"/>
-    <testcase name="204 empty body" time="0.001" classname="20DeleteBobOrder1"/>
-  </testsuite>
-  <testsuite name="21 Repeated DELETE" id="d79b7ee3-6817-4a1f-9679-2435de382c7b" timestamp="2026-10-28T08:26:49.300Z" tests="3" failures="0" errors="0" time="0.001">
-    <testcase name="HTTP 404" time="0.001" classname="21RepeatedDelete"/>
-    <testcase name="JSON Content-Type" time="0.001" classname="21RepeatedDelete"/>
-    <testcase name="Error code" time="0.001" classname="21RepeatedDelete"/>
-  </testsuite>
-  <testsuite name="22 GET deleted order" id="be03e91d-0d2d-454b-a55e-781121408bd8" timestamp="2026-10-28T08:26:49.300Z" tests="3" failures="0" errors="0" time="0.001">
-    <testcase name="HTTP 404" time="0.001" classname="22GetDeletedOrder"/>
-    <testcase name="JSON Content-Type" time="0.001" classname="22GetDeletedOrder"/>
-    <testcase name="Error code" time="0.001" classname="22GetDeletedOrder"/>
-  </testsuite>
-  <testsuite name="23 Count after deletion" id="c9df3915-56b6-4367-9401-4e95c4f2bd00" timestamp="2026-10-28T08:26:49.300Z" tests="4" failures="0" errors="0" time="0.001">
-    <testcase name="HTTP 200" time="0.001" classname="23CountAfterDeletion"/>
-    <testcase name="JSON Content-Type" time="0.001" classname="23CountAfterDeletion"/>
-    <testcase name="X-Total-Count" time="0.001" classname="23CountAfterDeletion"/>
-    <testcase name="Page shifted" time="0.001" classname="23CountAfterDeletion"/>
-  </testsuite>
-  <testsuite name="24 Cleanup order2" id="be3f61d4-5d64-4060-93ec-989033cebd3f" timestamp="2026-10-28T08:26:49.300Z" tests="2" failures="0" errors="0" time="0.001">
-    <testcase name="HTTP 204" time="0.001" classname="24CleanupOrder2"/>
-    <testcase name="204 empty body" time="0.001" classname="24CleanupOrder2"/>
-  </testsuite>
-  <testsuite name="25 Cleanup order3" id="1bad971a-3ec3-490a-8436-619f674fab4a" timestamp="2026-10-28T08:26:49.300Z" tests="2" failures="0" errors="0" time="0.001">
-    <testcase name="HTTP 204" time="0.001" classname="25CleanupOrder3"/>
-    <testcase name="204 empty body" time="0.001" classname="25CleanupOrder3"/>
-  </testsuite>
-  <testsuite name="26 Cleanup aliceOrder" id="76325a2e-03cd-4e03-845c-f366fb3b7905" timestamp="2026-10-28T08:26:49.300Z" tests="2" failures="0" errors="0" time="0.001">
-    <testcase name="HTTP 204" time="0.001" classname="26CleanupAliceOrder"/>
-    <testcase name="204 empty body" time="0.001" classname="26CleanupAliceOrder"/>
-  </testsuite>
-  <testsuite name="27 Verify cleanup" id="7d860116-72d2-42b4-b974-b5f8764b63a7" timestamp="2026-10-28T08:26:49.300Z" tests="3" failures="0" errors="0" time="0.001">
-    <testcase name="HTTP 200" time="0.001" classname="27VerifyCleanup"/>
-    <testcase name="JSON Content-Type" time="0.001" classname="27VerifyCleanup"/>
-    <testcase name="X-Total-Count" time="0.001" classname="27VerifyCleanup"/>
+  <testsuite name="06 Delete order" id="9ed2f56f-2444-4118-8a8d-9c9d88336be0" timestamp="2026-10-28T12:46:44.043Z" tests="2" failures="0" errors="0" time="0.003">
+    <testcase name="HTTP 204" time="0.003" classname="06DeleteOrder"/>
+    <testcase name="204 empty body" time="0.003" classname="06DeleteOrder"/>
   </testsuite>
 </testsuites>
