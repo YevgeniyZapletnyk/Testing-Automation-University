@@ -19,7 +19,14 @@
     "test:lab5": "vitest run --config vitest.api.config.ts",
     "coverage:lab5": "vitest run --config vitest.api.config.ts --coverage",
     "test:all": "npm test && npm run test:lab5",
-    "postman:run": "newman run postman/orders.postman_collection.json --reporters cli,junit,json --reporter-junit-export results/newman.xml --reporter-json-export results/newman.json"
+    "postman:run": "newman run postman/orders.postman_collection.json --reporters cli,junit,json --reporter-junit-export results/newman.xml --reporter-json-export results/newman.json",
+    "test:lab6": "playwright test",
+    "test:lab6:variant": "playwright test variant2",
+    "test:lab6:stability": "playwright test -c stability.config.ts --repeat-each=10",
+    "test:lab6:waiting": "playwright test -c experiments.config.ts waiting --repeat-each=10",
+    "test:lab6:model": "playwright test -c experiments.config.ts model --repeat-each=10",
+    "test:lab6:diagnostic": "playwright test -c diagnostic.config.ts",
+    "report:lab6": "playwright show-report"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -37,7 +44,8 @@
     "tsx": "^4.23.15",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.71.1",
-    "vitest": "^5.0.3"
+    "vitest": "^5.0.3",
+    "@playwright/test": "^1.65.0"
   },
   "dependencies": {
     "express": "^5.3.0"

@@ -195,3 +195,34 @@ results/newman.json. Word-звіт зберігається окремо від 
 Pagination valid → Pagination invalid → Delete order. Це всі п’ять ендпоінтів,
 а GET /orders перевіряється двічі: коректний і некоректний параметр limit.
 Решта сценаріїв доступу, меж і побічних ефектів покривається 68 API-тестами.
+
+## Лабораторна 6: Playwright, варіант 2
+
+Тести Swag Labs розміщені в `tests/e2e`. Варіант 2 перевіряє лічильник
+після додавання трьох різних товарів і точний склад кошика, включно з
+цінами та кількістю кожного товару. Кожен тест починається з окремої сесії.
+
+```bash
+npm ci
+npx playwright install chromium firefox
+npm run test:lab6
+npm run test:lab6:variant
+npm run test:lab6:stability
+npm run report:lab6
+```
+
+Основний набір містить 10 сценаріїв у Chromium і Firefox (20 запусків).
+Команди `npm test` та `npm run test:lab5` збережені для попередніх робіт.
+
+Експерименти винесені в `experiments/`:
+
+- `npm run test:lab6:waiting` - по 10 повторів трьох способів очікування
+  для `performance_glitch_user` на реальному Swag Labs;
+- `npm run test:lab6:model` - окрема локальна модель асинхронного оновлення;
+  падіння короткої паузи тут є предметом досліду;
+- `npm run test:lab6:diagnostic` - навмисне падіння перевірки 7 товарів
+  замість 6; службова траса зберігається в тимчасовій теці ОС.
+
+Експерименти не входять до основного набору Playwright. HTML-звіт,
+JSON-результати та скріншоти створюються локально. Звіти, результати,
+кеш і `node_modules` виключені з Git.

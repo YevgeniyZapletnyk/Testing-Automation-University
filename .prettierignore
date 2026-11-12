@@ -6,3 +6,10 @@ package-lock.json
 
 evidence/
 reports/
+
+playwright-report/
+test-results/
+evidence/
+*.docx
+*.pdf
+*.zip

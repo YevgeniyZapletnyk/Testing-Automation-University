@@ -9,3 +9,10 @@ reports/
 
 coverage-api/
 results/
+
+playwright-report/
+test-results/
+evidence/
+*.docx
+*.pdf
+*.zip
